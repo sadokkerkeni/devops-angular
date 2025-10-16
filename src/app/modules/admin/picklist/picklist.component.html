@@ -1,0 +1,97 @@
+<div class="p-4 space-y-6 block w-full">
+
+  <!-- Title -->
+  <h2 class="text-2xl font-bold">Gestion des Picklistes</h2>
+
+  <!-- Filters + Add Button -->
+  <div class="grid gap-4 sm:flex sm:flex-wrap sm:items-end">
+    <mat-form-field appearance="fill" class="w-full sm:w-60">
+      <mat-label>Filtrer par Magasin</mat-label>
+      <mat-select [(ngModel)]="selectedWarehouseId"  >
+        <mat-option [value]="null">Tous</mat-option>
+        <mat-option *ngFor="let w of warehouses" [value]="w.id">{{ w.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full sm:w-60">
+      <mat-label>Filtrer par Ligne</mat-label>
+      <mat-select [(ngModel)]="selectedLineId">
+        <mat-option [value]="null">Toutes</mat-option>
+        <mat-option *ngFor="let l of lines" [value]="l.id">{{ l.description }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="w-full sm:w-auto">
+      <button mat-flat-button color="primary" class="w-full sm:w-auto" (click)="openCreateDialog()">
+        + Ajouter Pickliste
+      </button>
+    </div>
+  </div>
+
+  <!-- Table Wrapper -->
+  <div class="w-full overflow-x-auto rounded-lg shadow-sm border border-gray-200">
+    <mat-table [dataSource]="filteredPicklists()" class="mat-elevation-z8 w-full bg-white text-sm">
+
+      <!-- ID -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          ID
+        </mat-header-cell>
+        <mat-cell *matCellDef="let p" class="px-4 py-2 border-b text-gray-800 whitespace-nowrap">
+          {{ p.id }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Name -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          Nom
+        </mat-header-cell>
+        <mat-cell *matCellDef="let p" class="px-4 py-2 border-b text-gray-800 whitespace-nowrap">
+          {{ p.name }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Status -->
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          Statut
+        </mat-header-cell>
+        <mat-cell *matCellDef="let p" class="px-4 py-2 border-b whitespace-nowrap">
+          <span
+            class="font-medium"
+            [ngClass]="{
+              'text-orange-600': p.status?.description?.toLowerCase().includes('receptionnée'),
+              'text-red-600': p.status?.description?.toLowerCase().includes('nonservie'),
+              'text-green-600': p.status?.description?.toLowerCase().includes('servie'),
+            }"
+          >
+            {{ p.status?.description || 'N/A' }}
+          </span>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Actions -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          Actions
+        </mat-header-cell>
+        <mat-cell *matCellDef="let p" class="px-4 py-2 border-b flex gap-2 whitespace-nowrap">
+          <button mat-icon-button color="accent" (click)="editPicklist(p)">
+            <mat-icon>edit</mat-icon>
+          </button>
+            <button mat-icon-button color="primary" (click)="goToPicklistDetails(p.id)" title="Détails">
+      <mat-icon>list_alt</mat-icon> <!-- or use any icon you prefer -->
+    </button>
+          
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns" class="bg-gray-50"></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        class="hover:bg-gray-50 transition duration-200 ease-in-out"
+      ></mat-row>
+    </mat-table>
+  </div>
+</div>

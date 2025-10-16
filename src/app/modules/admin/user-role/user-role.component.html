@@ -1,0 +1,166 @@
+<div class="p-4 space-y-6 block w-full">
+
+  <!-- Title -->
+  <h2 class="text-2xl font-bold">Gestion des Rôles Utilisateur</h2>
+
+  <!-- Create User Toggle -->
+  <div class="flex justify-end">
+    <button mat-flat-button color="primary" (click)="toggleCreateUser()">
+      {{ showCreateUser ? 'Fermer' : 'Créer un utilisateur' }}
+    </button>
+  </div>
+
+  <!-- Create User Form -->
+  <div *ngIf="showCreateUser" class="p-4 bg-white rounded border space-y-3">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <input class="border p-2 rounded" placeholder="Prénom" [(ngModel)]="createUserPayload.firstName" name="firstName">
+      <input class="border p-2 rounded" placeholder="Nom" [(ngModel)]="createUserPayload.lastName" name="lastName">
+      <input class="border p-2 rounded" placeholder="Matricule" [(ngModel)]="createUserPayload.matricule" name="matricule">
+      <input class="border p-2 rounded" placeholder="Email" [(ngModel)]="createUserPayload.email" name="email">
+      <input class="border p-2 rounded" placeholder="Mot de passe" [(ngModel)]="createUserPayload.password" name="password" type="password">
+    </div>
+    <div class="flex justify-end">
+      <button mat-flat-button color="accent" (click)="createUser()">Créer</button>
+    </div>
+  </div>
+
+  <!-- Users Table Wrapper -->
+  <div class="w-full overflow-x-auto rounded-lg shadow-sm border border-gray-200">
+    <mat-table [dataSource]="users" class="mat-elevation-z8 w-full bg-white text-sm">
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          ID
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user" class="px-4 py-2 border-b text-gray-800 whitespace-nowrap">
+          {{ user.id }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Full Name Column -->
+      <ng-container matColumnDef="fullName">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          Nom Complet
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user" class="px-4 py-2 border-b text-gray-800 whitespace-nowrap">
+          {{ user.fullName }}
+        </mat-cell>
+      </ng-container>
+
+       <!-- Matricule Column -->
+      <ng-container matColumnDef="matricule">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          Matricule
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user" class="px-4 py-2 border-b text-gray-800 whitespace-nowrap">
+          {{ user.matricule }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          Email
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user" class="px-4 py-2 border-b text-gray-800 whitespace-nowrap">
+          {{ user.email }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Current Roles Column -->
+      <ng-container matColumnDef="roles">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          Rôles Actuels
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user" class="px-4 py-2 border-b text-gray-800 whitespace-nowrap">
+          <!-- Updated to access role.name -->
+          <span *ngFor="let role of user.roles; let isLast=last">
+            {{ role.name }}<span *ngIf="!isLast">, </span>
+          </span>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+          Actions
+        </mat-header-cell>
+        <mat-cell *matCellDef="let user" class="px-4 py-2 border-b flex gap-2 whitespace-nowrap">
+          <button mat-icon-button color="accent" (click)="manageRoles(user)" title="Gérer les rôles">
+            <mat-icon>manage_accounts</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedUserColumns" class="bg-gray-50"></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: displayedUserColumns"
+        class="hover:bg-gray-50 transition duration-200 ease-in-out"
+        [class.selected-row]="selectedUser?.id === row.id"
+        (click)="onSelectUser(row)"
+      ></mat-row>
+    </mat-table>
+  </div>
+
+  <!-- Roles Management Section (appears when a user is selected) -->
+  <div *ngIf="selectedUser" class="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
+    <h3 class="text-xl font-semibold mb-4">Gérer les rôles de {{ selectedUser.fullName }}</h3>
+
+    <!-- Roles Table Wrapper -->
+    <div class="w-full overflow-x-auto rounded-lg shadow-sm border border-gray-200 mb-4">
+      <mat-table [dataSource]="roles" class="mat-elevation-z8 w-full bg-white text-sm">
+        <!-- Role Name Column -->
+        <ng-container matColumnDef="roleName">
+          <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+            Nom du Rôle
+          </mat-header-cell>
+          <mat-cell *matCellDef="let role" class="px-4 py-2 border-b text-gray-800 whitespace-nowrap">
+            {{ role.name }}
+          </mat-cell>
+        </ng-container>
+
+        <!-- Role Assignment Column -->
+        <ng-container matColumnDef="assignment">
+          <mat-header-cell *matHeaderCellDef class="bg-gray-100 text-gray-700 font-semibold uppercase px-4 py-3 border-b whitespace-nowrap">
+            Assignation
+          </mat-header-cell>
+          <mat-cell *matCellDef="let role" class="px-4 py-2 border-b whitespace-nowrap">
+            <mat-checkbox
+              [checked]="isRoleAssigned(role.id)"
+              (change)="toggleRole(role.id)"
+              [disabled]="assigningRoles"
+            >
+              {{ isRoleAssigned(role.id) ? 'Assigné' : 'Non assigné' }}
+            </mat-checkbox>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="['roleName', 'assignment']" class="bg-gray-50"></mat-header-row>
+        <mat-row
+          *matRowDef="let row; columns: ['roleName', 'assignment']"
+          class="hover:bg-gray-50 transition duration-200 ease-in-out"
+          [class.assigned-row]="isRoleAssigned(row.id)"
+        ></mat-row>
+      </mat-table>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex justify-end gap-2">
+      <button mat-button (click)="deselectUser()" [disabled]="assigningRoles">Annuler</button>
+      <button 
+        mat-flat-button 
+        color="primary" 
+        (click)="saveRoles()" 
+        [disabled]="assigningRoles">
+        <mat-spinner *ngIf="assigningRoles" diameter="20" class="mr-2"></mat-spinner>
+        <span *ngIf="!assigningRoles">Enregistrer</span>
+        <span *ngIf="assigningRoles">Enregistrement...</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div *ngIf="loadingUsers || loadingRoles" class="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+</div>

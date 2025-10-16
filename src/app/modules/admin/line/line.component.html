@@ -1,0 +1,110 @@
+<div class="p-6 text-white block w-full">
+  <h1 class="text-indigo-400 font-bold mb-6">Gestion des Lignes</h1>
+
+  <!-- Unified Line Form -->
+  <div class="bg-gray-900 p-6 rounded-lg shadow-lg mb-8">
+    <h2 class="text-xl font-semibold text-indigo-400 mb-4">
+      {{ isEditMode ? 'Modifier la Ligne #' + currentEditId : 'Ajouter une Nouvelle Ligne' }}
+    </h2>
+    <form [formGroup]="lineForm" (ngSubmit)="submitForm()">
+      <div class="grid grid-cols-1 gap-4">
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <input matInput formControlName="description" placeholder="Description" required>
+          <mat-error *ngIf="lineForm.get('description')?.hasError('required')">
+            La description est requise
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="mt-4 flex space-x-4">
+        <button mat-raised-button color="primary" type="submit">
+          {{ isEditMode ? 'Mettre à jour' : 'Ajouter' }}
+        </button>
+        <button *ngIf="isEditMode" mat-raised-button color="warn" (click)="cancelEdit()">Annuler</button>
+        <button *ngIf="!isEditMode" mat-raised-button color="accent" (click)="resetForm()">Réinitialiser</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Lines Table -->
+  <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+    <mat-card class="shadow-md rounded-lg overflow-hidden">
+      <mat-card-header class="bg-gray-100 rounded-t-lg">
+        <mat-card-title class="text-xl text-gray-800">Liste des Lignes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="p-0">
+        <div class="overflow-x-auto">
+          <table mat-table [dataSource]="lines" class="min-w-full">
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                ID</th>
+              <td mat-cell *matCellDef="let element"
+                class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.id }}</td>
+            </ng-container>
+
+            <!-- Description Column -->
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Description</th>
+              <td mat-cell *matCellDef="let element"
+                class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.description }}</td>
+            </ng-container>
+
+            <!-- IsActive Column -->
+            <ng-container matColumnDef="isActive">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Statut</th>
+              <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-sm">
+                <span [ngClass]="{
+                  'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800': element.isActive,
+                  'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800': !element.isActive
+                }">
+                  {{ element.isActive ? 'Actif' : 'Inactif' }}
+                </span>
+              </td>
+            </ng-container>
+
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Actions</th>
+              <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-right text-sm font-medium">
+                <button mat-icon-button (click)="startEdit(element)" title="Modifier">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="deleteLine(element.id)" color="warn" title="Supprimer">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button
+                  (click)="toggleActiveStatus(element.id, element.isActive)"
+                  [color]="element.isActive ? 'primary' : 'accent'"
+                  title="{{ element.isActive ? 'Désactiver' : 'Activer' }}">
+                  <mat-icon>{{ element.isActive ? 'toggle_on' : 'toggle_off' }}</mat-icon>
+                </button>
+                <button mat-icon-button (click)="assignPicklist(element.id)" title="Assigner Picklist">
+                  <mat-icon>assignment</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+              class="hover:bg-gray-50 transition-colors duration-150 ease-in-out"></tr>
+          </table>
+        </div>
+
+        <!-- Empty State -->
+        <div *ngIf="lines.length === 0" class="text-center py-12">
+          <mat-icon class="text-gray-400 text-6xl block mx-auto mb-4">inventory_2</mat-icon>
+          <p class="text-gray-500 text-lg">Aucune ligne trouvée.</p>
+          <p class="text-gray-400 mt-2">Commencez par créer une nouvelle ligne.</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+/* Align header controls (search and buttons) to same height */
+.header-actions .control-compact .mdc-notched-outline__leading,
+.header-actions .control-compact .mdc-notched-outline__trailing {
+  height: 36px;
+}
+.header-actions .control-compact .mdc-text-field--outlined,
+.header-actions .control-compact .mat-mdc-form-field-infix,
+.header-actions .control-compact .mat-mdc-form-field-flex {
+  height: 36px;
+}
+.header-actions .control-compact.mat-mdc-unelevated-button,
+.header-actions .control-compact.mat-mdc-stroked-button {
+  height: 36px;
+  line-height: 36px;
+}
+

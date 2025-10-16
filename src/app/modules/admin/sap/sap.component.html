@@ -1,0 +1,132 @@
+<!-- sap.component.html -->
+<div class="p-6 text-white block w-full">
+  <h1 class="text-indigo-400 font-bold mb-6">Gestion des Entrées SAP</h1>
+
+  <!-- Unified SAP Form -->
+  <div class="bg-gray-900 p-6 rounded-lg shadow-lg mb-8">
+    <h2 class="text-xl font-semibold text-indigo-400 mb-4">
+      {{ isEditMode ? 'Modifier l\'Entrée SAP #' + currentEditId : 'Ajouter une Nouvelle Entrée SAP' }}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <mat-form-field appearance="fill">
+        <mat-label>Article</mat-label>
+        <input matInput [(ngModel)]="sapForm.article" placeholder="Article" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Code US</mat-label>
+        <input matInput [(ngModel)]="sapForm.usCode" placeholder="Code US" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Quantité</mat-label>
+        <input matInput type="number" [(ngModel)]="sapForm.quantite" placeholder="Quantité" min="0" required>
+      </mat-form-field>
+    </div>
+    <div class="mt-4 flex space-x-4">
+      <button mat-raised-button color="primary" (click)="submitForm()">
+        {{ isEditMode ? 'Mettre à jour' : 'Ajouter' }}
+      </button>
+      <button *ngIf="isEditMode" mat-raised-button color="warn" (click)="cancelEdit()">Annuler</button>
+      <button *ngIf="!isEditMode" mat-raised-button color="accent" (click)="resetForm()">Réinitialiser</button>
+    </div>
+  </div>
+
+  <!-- SAP Entries Table -->
+  <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+    <mat-card class="shadow-md rounded-lg overflow-hidden">
+      <mat-card-header class="bg-gray-100 rounded-t-lg">
+        <mat-card-title class="text-xl text-gray-800">Liste des Éléments SAP</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="p-0">
+        <div class="overflow-x-auto">
+          <table mat-table [dataSource]="sapEntries" class="min-w-full">
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                ID</th>
+              <td mat-cell *matCellDef="let element"
+                class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.id }}</td>
+            </ng-container>
+
+            <!-- Article Column -->
+            <ng-container matColumnDef="article">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Article</th>
+              <td mat-cell *matCellDef="let element"
+                class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.article }}</td>
+            </ng-container>
+
+            <!-- UsCode Column -->
+            <ng-container matColumnDef="usCode">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                UsCode</th>
+              <td mat-cell *matCellDef="let element"
+                class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.usCode }}</td>
+            </ng-container>
+
+            <!-- Quantite Column -->
+            <ng-container matColumnDef="quantite">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Quantité</th>
+              <td mat-cell *matCellDef="let element"
+                class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.quantite }}</td>
+            </ng-container>
+
+            <!-- IsActive Column -->
+            <ng-container matColumnDef="isActive">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Statut</th>
+              <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-sm">
+                <span [ngClass]="{
+                  'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800': element.isActive,
+                  'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800': !element.isActive
+                }">
+                  {{ element.isActive ? 'Actif' : 'Inactif' }}
+                </span>
+              </td>
+            </ng-container>
+
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef
+                class="px-4 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Actions</th>
+              <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-right text-sm font-medium">
+                <!-- Bouton Modifier -->
+                <button mat-icon-button (click)="startEdit(element)" title="Modifier">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <!-- Bouton Supprimer -->
+                <button mat-icon-button (click)="deleteSap(element.id)" color="warn" title="Supprimer">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <!-- Bouton Basculer Statut Actif/Inactif -->
+                <button mat-icon-button
+                  (click)="toggleActiveStatus(element.id, element.isActive)"
+                  [color]="element.isActive ? 'primary' : 'accent'"
+                  title="{{ element.isActive ? 'Désactiver' : 'Activer' }}">
+                  <mat-icon>{{ element.isActive ? 'toggle_on' : 'toggle_off' }}</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+              class="hover:bg-gray-50 transition-colors duration-150 ease-in-out"></tr>
+          </table>
+        </div>
+
+        <!-- Empty State -->
+        <div *ngIf="sapEntries.length === 0" class="text-center py-12">
+          <mat-icon class="text-gray-400 text-6xl block mx-auto mb-4">inventory_2</mat-icon>
+          <p class="text-gray-500 text-lg">Aucun élément SAP trouvé.</p>
+          <p class="text-gray-400 mt-2">Commencez par créer un nouvel élément.</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

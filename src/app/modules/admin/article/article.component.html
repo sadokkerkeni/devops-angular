@@ -1,0 +1,112 @@
+<!-- src/app/modules/admin/apps/logistics/articles/article.component.html -->
+<div class="flex flex-col w-full h-full">
+  <!-- Header -->
+  <div class="relative flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between py-4 px-6 md:px-8 border-b">
+    <div class="text-3xl font-bold tracking-tight">Gestion des Articles</div>
+    <div class="flex flex-shrink-0 items-center mt-4 sm:mt-0 sm:ml-4">
+      <button
+        mat-stroked-button
+        [color]="'primary'"
+        (click)="onCreate()"
+        class="ml-4">
+        <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+        <span class="ml-2">Créer Article</span>
+      </button>
+      <button
+        mat-stroked-button
+        [color]="'accent'"
+        (click)="toggleActiveFilter()"
+        class="ml-4">
+        <mat-icon [svgIcon]="'heroicons_outline:eye'"></mat-icon>
+        <span class="ml-2">Afficher {{ isActiveFilter ? 'Inactifs' : 'Actifs' }}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-auto overflow-y-auto p-6 md:p-8">
+    <!-- Loading Spinner -->
+    <div class="flex flex-col items-center justify-center h-full" *ngIf="loading">
+      <mat-spinner diameter="40"></mat-spinner>
+      <div class="mt-4 text-secondary">Chargement des articles...</div>
+    </div>
+
+    <!-- Articles Table/List -->
+    <ng-container *ngIf="!loading">
+      <mat-card class="shadow-md rounded-lg overflow-hidden">
+        <mat-card-header class="bg-gray-100 rounded-t-lg">
+          <mat-card-title class="text-xl text-gray-800">Liste des Articles</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="p-0">
+          <div class="overflow-x-auto">
+            <table mat-table [dataSource]="articles" class="min-w-full">
+              <!-- ID Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.id }}</td>
+              </ng-container>
+
+              <!-- CodeProduit Column -->
+              <ng-container matColumnDef="codeProduit">
+                <th mat-header-cell *matHeaderCellDef class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Code Produit</th>
+                <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.codeProduit }}</td>
+              </ng-container>
+
+              <!-- Designation Column -->
+              <ng-container matColumnDef="designation">
+                <th mat-header-cell *matHeaderCellDef class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Désignation</th>
+                <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.designation }}</td>
+              </ng-container>
+
+              <!-- DateAjout Column -->
+              <ng-container matColumnDef="dateAjout">
+                <th mat-header-cell *matHeaderCellDef class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date d'Ajout</th>
+                <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-sm text-gray-900">{{ element.dateAjout | date:'short' }}</td>
+              </ng-container>
+
+              <!-- IsActive Column -->
+              <ng-container matColumnDef="isActive">
+                <th mat-header-cell *matHeaderCellDef class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Statut</th>
+                <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-sm">
+                  <span [ngClass]="{
+                    'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800': element.isActive,
+                    'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800': !element.isActive
+                  }">
+                    {{ element.isActive ? 'Actif' : 'Inactif' }}
+                  </span>
+                </td>
+              </ng-container>
+
+              <!-- Actions Column -->
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef class="px-4 py-3 bg-gray-50 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                <td mat-cell *matCellDef="let element" class="px-4 py-2 whitespace-nowrap text-right text-sm font-medium">
+                  <button mat-icon-button [color]="'primary'" (click)="onView(element)" title="Voir Détails">
+                    <mat-icon>visibility</mat-icon>
+                  </button>
+                  <button mat-icon-button [color]="'accent'" (click)="onEdit(element)" title="Modifier">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-icon-button [color]="element.isActive ? 'warn' : 'primary'" (click)="onToggleActive(element.id, element.isActive)" title="{{ element.isActive ? 'Désactiver' : 'Activer' }}">
+                    <mat-icon>{{ element.isActive ? 'toggle_off' : 'toggle_on' }}</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="hover:bg-gray-50 transition-colors duration-150 ease-in-out"></tr>
+            </table>
+          </div>
+
+          <!-- Empty State -->
+          <div class="flex flex-col items-center justify-center p-8 text-gray-500" *ngIf="articles.length === 0 && !loading">
+            <mat-icon [svgIcon]="'heroicons_outline:inbox'" class="text-6xl block mx-auto mb-4"></mat-icon>
+            <p class="text-lg">Aucun article trouvé.</p>
+            <p class="mt-2 text-center max-w-64">Commencez par créer un nouvel article.</p>
+            <button mat-button [color]="'primary'" (click)="onCreate()" class="mt-4">Créer le premier article</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>

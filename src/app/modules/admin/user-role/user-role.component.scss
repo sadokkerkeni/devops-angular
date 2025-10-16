@@ -1,0 +1,45 @@
+/* Add these styles to support the new HTML structure */
+
+.selected-row {
+  background-color: #e3f2fd; // Light blue for selected user row
+}
+
+.text-green-600 {
+  color: #16a34a; // Green for active status
+}
+
+.text-red-600 {
+  color: #dc2626; // Red for inactive status
+}
+
+.text-orange-600 {
+  color: #ea580c; // Orange (if needed)
+}
+
+/* Spinner alignment */
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+/* Grid for assignment section */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.items-end {
+  align-items: end;
+}

@@ -1,0 +1,35 @@
+# HELP http_requests_total Total number of HTTP requests
+# TYPE http_requests_total counter
+http_requests_total{method="GET",route="/",status_code="200"} 150
+http_requests_total{method="GET",route="/dashboard",status_code="200"} 75
+http_requests_total{method="POST",route="/api/users",status_code="201"} 25
+http_requests_total{method="GET",route="/api/warehouses",status_code="200"} 100
+
+# HELP http_request_duration_seconds Duration of HTTP requests in seconds
+# TYPE http_request_duration_seconds histogram
+http_request_duration_seconds_bucket{method="GET",route="/",status_code="200",le="0.1"} 50
+http_request_duration_seconds_bucket{method="GET",route="/",status_code="200",le="0.5"} 100
+http_request_duration_seconds_bucket{method="GET",route="/",status_code="200",le="1.0"} 150
+http_request_duration_seconds_sum{method="GET",route="/",status_code="200"} 75.5
+http_request_duration_seconds_count{method="GET",route="/",status_code="200"} 150
+
+# HELP active_users Number of active users
+# TYPE active_users gauge
+active_users 42
+
+# HELP page_views_total Total number of page views
+# TYPE page_views_total counter
+page_views_total{page="/dashboard"} 200
+page_views_total{page="/warehouses"} 150
+page_views_total{page="/users"} 100
+page_views_total{page="/settings"} 75
+
+# HELP errors_total Total number of errors
+# TYPE errors_total counter
+errors_total{error_type="validation",component="form"} 5
+errors_total{error_type="network",component="api"} 2
+errors_total{error_type="auth",component="login"} 1
+
+# HELP angular_app_info Angular application information
+# TYPE angular_app_info gauge
+angular_app_info{version="18.0.0",environment="production"} 1

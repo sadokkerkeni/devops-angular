@@ -1,0 +1,90 @@
+<div class="p-6 text-white block w-full">
+  <h1 class="text-indigo-400 font-bold mb-6">Détails de la Picklist #{{ picklistId }}</h1>
+
+  <!-- Picklist Summary Card -->
+  <div class="bg-gray-900 p-6 rounded-lg shadow-lg mb-8">
+    <h2 class="text-xl font-semibold text-indigo-400 mb-2">Résumé</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <p><span class="text-gray-400">ID:</span> <span class="font-medium">{{ picklist?.id }}</span></p>
+      <p><span class="text-gray-400">Nom:</span> <span class="font-medium">{{ picklist?.name }}</span></p>
+      <p><span class="text-gray-400">Date de création:</span> <span class="font-medium">{{ picklist?.createdAt | date:'short' }}</span></p>
+      <p><span class="text-gray-400">Status:</span> <span class="font-medium">{{ picklist?.status?.description || 'N/A' }}</span></p>
+      <!-- Display the calculated total quantity -->
+      <p><span class="text-gray-400">Quantité Totale:</span> <span class="font-medium">{{ totalPicklistQuantity }}</span></p>
+      <!-- Optionally display availability status -->
+      <p>
+        <span class="text-gray-400">Disponibilité Globale:</span>
+        <span class="font-medium"
+              [ngClass]="{
+                'text-green-400': isAllAvailable === true,
+                'text-red-400': isAllAvailable === false,
+                'text-yellow-400': isAllAvailable !== true && isAllAvailable !== false
+              }">
+          <span *ngIf="isAllAvailable === true">Tout Disponible</span>
+          <span *ngIf="isAllAvailable === false">Partiellement Disponible</span>
+          <span *ngIf="isAllAvailable !== true && isAllAvailable !== false">Non Vérifiée</span>
+        </span>
+      </p>
+    </div>
+    <div class="mt-4 flex flex-wrap gap-4">
+      <button mat-raised-button color="primary" (click)="checkAvailability()" [disabled]="detailPicklists.length === 0">
+  Vérifier la Disponibilité
+</button>
+      <button mat-raised-button color="accent" (click)="sendOutPicklist()"
+        [disabled]="picklist?.status?.description === 'Served' || picklist?.status?.description === 'receptionnée'  || !isAllAvailable || detailPicklists.length === 0">
+        Envoyer la Picklist
+      </button>
+        <button mat-raised-button color="primary" (click)="openAddDetailDialog()" [disabled]="!picklist || picklist.status?.description === 'Served' || picklist.status?.description === 'receptionnée'">
+    <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+    <span class="ml-2">Ajouter Détail</span>
+  </button>
+    </div>
+  </div>
+
+  <!-- Picklist Details -->
+  <div *ngIf="detailPicklists && detailPicklists.length > 0; else noDetails">
+    <h2 class="text-xl font-semibold text-indigo-400 mb-4">Détails des Articles</h2>
+    <div *ngFor="let detail of detailPicklists; let i = index" class="bg-gray-800 text-white max-w-4xl mx-auto rounded-xl shadow-md overflow-hidden mb-6 hover:shadow-2xl hover:bg-black transition-all duration-500 ease-in-out">
+      <div class="md:flex">
+        <div class="p-6 flex-grow">
+          <div class="flex flex-wrap items-baseline justify-between">
+            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Article: {{ detail.article?.designation }}</div>
+            <div class="text-xs text-gray-400">ID: {{ detail.id }}</div>
+          </div>
+          <p class="mt-2 text-lg leading-tight font-medium text-white">Emplacement: {{ detail.emplacement }}</p>
+          <div class="flex flex-wrap gap-4 mt-2">
+            <p class="text-gray-400">Quantité: <span class="font-medium">{{ detail.quantite }}</span></p>
+            <p class="text-gray-400">Statut: <span class="font-medium">{{ detail.status?.description }}</span></p>
+            <!-- Display individual item availability if checked -->
+            <p class="text-gray-400" *ngIf="detail.isAvailable !== undefined">
+              Disponibilité:
+              <span class="font-medium"
+                    [ngClass]="{
+                      'text-green-400': detail.isAvailable === true,
+                      'text-red-400': detail.isAvailable === false
+                    }">
+                {{ detail.isAvailable ? 'Dispo' : 'Non Dispo' }}
+                <span *ngIf="detail.availableQuantity !== undefined">({{ detail.availableQuantity }})</span>
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center justify-center p-4 md:p-2 bg-gray-700 md:min-w-[150px]">
+          <div class="text-center">
+            <p class="text-xs text-indigo-400 uppercase mb-1 truncate px-2">Code Produit</p>
+            <svg #barcodeRef class="max-h-20 w-full"></svg>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noDetails>
+    <div class="text-center py-12">
+      <mat-icon class="text-gray-600 text-6xl block mx-auto mb-4">inventory_2</mat-icon>
+      <p class="text-gray-400 text-xl">Aucun détail trouvé pour cette picklist.</p>
+      <p class="text-gray-500 mt-2">Veuillez vérifier l'ID ou créer des détails.</p>
+    </div>
+  </ng-template>
+</div>

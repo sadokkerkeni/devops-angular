@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="25" failures="15" errors="0" time="72.286">
+  <testsuite name="ReturnService" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:04:47" time="17.389" tests="1">
+    <testcase classname="ReturnService should be created" name="ReturnService should be created" time="0.484">
+      <failure>NullInjectorError: R3InjectorError(DynamicTestModule)[ReturnService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.ReturnService_Factory [as factory] (ng:///ReturnService/ɵfac.js:5:41)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at _TestBedImpl.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26246:52)
+    at Function.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26105:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/return-line/return.service.spec.ts:10:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="WarehouseService" errors="0" failures="0" skipped="0" timestamp="2025-10-16T12:04:48" time="17.717" tests="8">
+    <testcase classname="WarehouseService should be created" name="WarehouseService should be created" time="0.435">
+    </testcase>
+    <testcase classname="WarehouseService getWarehouses should return warehouses list" name="WarehouseService getWarehouses should return warehouses list" time="0.01">
+    </testcase>
+    <testcase classname="WarehouseService getWarehouses should handle empty warehouses list" name="WarehouseService getWarehouses should handle empty warehouses list" time="0.003">
+    </testcase>
+    <testcase classname="WarehouseService createWarehouse should create a new warehouse" name="WarehouseService createWarehouse should create a new warehouse" time="0.006">
+    </testcase>
+    <testcase classname="WarehouseService createWarehouse should handle creation error" name="WarehouseService createWarehouse should handle creation error" time="0.004">
+    </testcase>
+    <testcase classname="WarehouseService updateWarehouse should update an existing warehouse" name="WarehouseService updateWarehouse should update an existing warehouse" time="0.005">
+    </testcase>
+    <testcase classname="WarehouseService setActiveStatus should set warehouse active status to true" name="WarehouseService setActiveStatus should set warehouse active status to true" time="0.004">
+    </testcase>
+    <testcase classname="WarehouseService setActiveStatus should set warehouse active status to false" name="WarehouseService setActiveStatus should set warehouse active status to false" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="ReturnLineComponent" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:04:48" time="22.075" tests="1">
+    <testcase classname="ReturnLineComponent should create" name="ReturnLineComponent should create" time="0.471">
+      <failure>Error: Unexpected &quot;ReturnLineComponent&quot; found in the &quot;declarations&quot; array of the &quot;TestBed.configureTestingModule&quot; call, &quot;ReturnLineComponent&quot; is marked as standalone and can&apos;t be declared in any NgModule - did you intend to import it instead (by adding it to the &quot;imports&quot; array)?
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:25182:19
+    at Array.forEach (&lt;anonymous&gt;)
+    at assertNoStandaloneComponents (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:25179:11)
+    at TestBedCompiler.configureTestingModule (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:25241:13)
+    at _TestBedImpl.configureTestingModule (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26235:23)
+    at Function.configureTestingModule (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26067:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/return-line/return-line.component.spec.ts:10:13
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="LocationComponent" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:04:47" time="24.722" tests="1">
+    <testcase classname="LocationComponent should create" name="LocationComponent should create" time="0.557">
+      <failure>NullInjectorError: R3InjectorError(Standalone[LocationComponent])[LocationService -&gt; LocationService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.LocationService_Factory [as factory] (ng:///LocationService/ɵfac.js:5:43)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at ChainedInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:12979:36)
+    at lookupTokenUsingModuleInjector (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4417:39)
+    at getOrCreateInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4465:12)
+    at ɵɵdirectiveInject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:10745:12)
+    at NodeInjectorFactory.LocationComponent_Factory [as factory] (ng:///LocationComponent/ɵfac.js:6:7)
+    at getNodeInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4650:44)
+    at createRootComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13213:35)
+    at ComponentFactory.create (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13078:25)
+    at initComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26310:51)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Object.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26156:33)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at NgZone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26010:28)
+    at _TestBedImpl.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26313:41)
+    at Function.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26120:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/location/location.component.spec.ts:13:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="MovementTraceService" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:05:06" time="6.855" tests="1">
+    <testcase classname="MovementTraceService should be created" name="MovementTraceService should be created" time="0.461">
+      <failure>NullInjectorError: R3InjectorError(DynamicTestModule)[MovementTraceService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.MovementTraceService_Factory [as factory] (ng:///MovementTraceService/ɵfac.js:5:48)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at _TestBedImpl.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26246:52)
+    at Function.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26105:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/movment-trace/movment-trace.service.spec.ts:10:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="LineService" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:05:09" time="9.152" tests="1">
+    <testcase classname="LineService should be created" name="LineService should be created" time="0.479">
+      <failure>NullInjectorError: R3InjectorError(DynamicTestModule)[LineService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.LineService_Factory [as factory] (ng:///LineService/ɵfac.js:5:39)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at _TestBedImpl.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26246:52)
+    at Function.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26105:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/line/line.service.spec.ts:10:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="ArticleComponent" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:05:10" time="9.819" tests="1">
+    <testcase classname="ArticleComponent should create" name="ArticleComponent should create" time="0.007">
+      <failure>Error: Unexpected &quot;ArticleComponent&quot; found in the &quot;declarations&quot; array of the &quot;TestBed.configureTestingModule&quot; call, &quot;ArticleComponent&quot; is marked as standalone and can&apos;t be declared in any NgModule - did you intend to import it instead (by adding it to the &quot;imports&quot; array)?
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:25182:19
+    at Array.forEach (&lt;anonymous&gt;)
+    at assertNoStandaloneComponents (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:25179:11)
+    at TestBedCompiler.configureTestingModule (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:25241:13)
+    at _TestBedImpl.configureTestingModule (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26235:23)
+    at Function.configureTestingModule (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26067:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/article/article.component.spec.ts:10:13
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="ArticleService" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:05:12" time="8.783" tests="1">
+    <testcase classname="ArticleService should be created" name="ArticleService should be created" time="0.04">
+      <failure>NullInjectorError: R3InjectorError(DynamicTestModule)[ArticleService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.ArticleService_Factory [as factory] (ng:///ArticleService/ɵfac.js:5:42)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at _TestBedImpl.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26246:52)
+    at Function.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26105:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/article/article.service.spec.ts:10:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Basic Test Setup" errors="0" failures="0" skipped="0" timestamp="2025-10-16T12:05:13" time="8.022" tests="2">
+    <testcase classname="Basic Test Setup should work" name="Basic Test Setup should work" time="0.005">
+    </testcase>
+    <testcase classname="Basic Test Setup should add numbers correctly" name="Basic Test Setup should add numbers correctly" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="PicklistService" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:04:51" time="31.491" tests="1">
+    <testcase classname="PicklistService should be created" name="PicklistService should be created" time="0.351">
+      <failure>NullInjectorError: R3InjectorError(DynamicTestModule)[PicklistService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.PicklistService_Factory [as factory] (ng:///PicklistService/ɵfac.js:5:43)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at _TestBedImpl.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26246:52)
+    at Function.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26105:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/picklist/picklist.service.spec.ts:10:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="TriggersComponent" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:04:51" time="32.553" tests="1">
+    <testcase classname="TriggersComponent should create" name="TriggersComponent should create" time="0.289">
+      <failure>NullInjectorError: R3InjectorError(Standalone[TriggersComponent])[MatDialogRef -&gt; MatDialogRef -&gt; MatDialogRef]: 
+  NullInjectorError: No provider for MatDialogRef!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at ChainedInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:12979:36)
+    at lookupTokenUsingModuleInjector (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4417:39)
+    at getOrCreateInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4465:12)
+    at ɵɵdirectiveInject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:10745:12)
+    at NodeInjectorFactory.TriggersComponent_Factory [as factory] (ng:///TriggersComponent/ɵfac.js:6:57)
+    at getNodeInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4650:44)
+    at createRootComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13213:35)
+    at ComponentFactory.create (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13078:25)
+    at initComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26310:51)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Object.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26156:33)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at NgZone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26010:28)
+    at _TestBedImpl.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26313:41)
+    at Function.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26120:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/automation/triggers/triggers.component.spec.ts:13:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="LineComponent" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:05:06" time="18.411" tests="1">
+    <testcase classname="LineComponent should create" name="LineComponent should create" time="0.093">
+      <failure>NullInjectorError: R3InjectorError(Standalone[LineComponent])[LineService -&gt; LineService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.LineService_Factory [as factory] (ng:///LineService/ɵfac.js:5:39)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at ChainedInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:12979:36)
+    at lookupTokenUsingModuleInjector (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4417:39)
+    at getOrCreateInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4465:12)
+    at ɵɵdirectiveInject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:10745:12)
+    at NodeInjectorFactory.LineComponent_Factory [as factory] (ng:///LineComponent/ɵfac.js:5:41)
+    at getNodeInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4650:44)
+    at createRootComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13213:35)
+    at ComponentFactory.create (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13078:25)
+    at initComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26310:51)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Object.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26156:33)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at NgZone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26010:28)
+    at _TestBedImpl.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26313:41)
+    at Function.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26120:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/line/line.component.spec.ts:13:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="UserRoleService" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:04:51" time="33.896" tests="1">
+    <testcase classname="UserRoleService should be created" name="UserRoleService should be created" time="0.219">
+      <failure>NullInjectorError: R3InjectorError(DynamicTestModule)[UserRoleService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.UserRoleService_Factory [as factory] (ng:///UserRoleService/ɵfac.js:5:43)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at _TestBedImpl.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26246:52)
+    at Function.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26105:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/user-role/user-role.service.spec.ts:10:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="SapService" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:04:53" time="31.768" tests="1">
+    <testcase classname="SapService should be created" name="SapService should be created" time="0.178">
+      <failure>NullInjectorError: R3InjectorError(DynamicTestModule)[SapService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.SapService_Factory [as factory] (ng:///SapService/ɵfac.js:5:38)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at _TestBedImpl.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26246:52)
+    at Function.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26105:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/sap/sap.service.spec.ts:10:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="SapComponent" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:04:48" time="39.107" tests="1">
+    <testcase classname="SapComponent should create" name="SapComponent should create" time="0.246">
+      <failure>NullInjectorError: R3InjectorError(Standalone[SapComponent])[SapService -&gt; SapService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.SapService_Factory [as factory] (ng:///SapService/ɵfac.js:5:38)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at ChainedInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:12979:36)
+    at lookupTokenUsingModuleInjector (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4417:39)
+    at getOrCreateInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4465:12)
+    at ɵɵdirectiveInject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:10745:12)
+    at NodeInjectorFactory.SapComponent_Factory [as factory] (ng:///SapComponent/ɵfac.js:5:40)
+    at getNodeInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4650:44)
+    at createRootComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13213:35)
+    at ComponentFactory.create (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13078:25)
+    at initComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26310:51)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Object.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26156:33)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at NgZone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26010:28)
+    at _TestBedImpl.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26313:41)
+    at Function.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26120:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/sap/sap.component.spec.ts:13:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="PicklistComponent" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:04:54" time="38.155" tests="1">
+    <testcase classname="PicklistComponent should create" name="PicklistComponent should create" time="0.209">
+      <failure>NullInjectorError: R3InjectorError(Standalone[PicklistComponent])[PicklistService -&gt; PicklistService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.PicklistService_Factory [as factory] (ng:///PicklistService/ɵfac.js:5:43)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at ChainedInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:12979:36)
+    at lookupTokenUsingModuleInjector (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4417:39)
+    at getOrCreateInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4465:12)
+    at ɵɵdirectiveInject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:10745:12)
+    at NodeInjectorFactory.PicklistComponent_Factory [as factory] (ng:///PicklistComponent/ɵfac.js:6:7)
+    at getNodeInjectable (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:4650:44)
+    at createRootComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13213:35)
+    at ComponentFactory.create (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:13078:25)
+    at initComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26310:51)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Object.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26156:33)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at NgZone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:26010:28)
+    at _TestBedImpl.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26313:41)
+    at Function.createComponent (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26120:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/picklist/picklist.component.spec.ts:13:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="LocationService" errors="0" failures="1" skipped="0" timestamp="2025-10-16T12:05:12" time="28.377" tests="1">
+    <testcase classname="LocationService should be created" name="LocationService should be created" time="0.152">
+      <failure>NullInjectorError: R3InjectorError(DynamicTestModule)[LocationService -&gt; _HttpClient -&gt; _HttpClient]: 
+  NullInjectorError: No provider for _HttpClient!
+    at NullInjector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:8746:27)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9175:33)
+    at injectInjectorOnly (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:651:33)
+    at ɵɵinject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:655:42)
+    at Object.LocationService_Factory [as factory] (ng:///LocationService/ɵfac.js:5:43)
+    at R3Injector.hydrate (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9276:35)
+    at R3Injector.get (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/core.mjs:9164:33)
+    at _TestBedImpl.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26246:52)
+    at Function.inject (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/@angular/core/fesm2022/testing.mjs:26105:37)
+    at /mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/src/app/modules/admin/location/location.service.spec.ts:10:23
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:416:30)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:300:43)
+    at _ZoneDelegate.Object.&lt;anonymous&gt;._ZoneDelegate.invoke (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:415:56)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone.umd.js:173:47)
+    at Object.wrappedFunc (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/zone.js/bundles/zone-testing.umd.js:780:34)
+    at Promise.then.completed (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusHook (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:281:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:246:5)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/mnt/c/work/sadok/pfe-sadok/fuse-starter-v18.0.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
