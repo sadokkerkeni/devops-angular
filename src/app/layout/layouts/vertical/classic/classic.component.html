@@ -1,0 +1,46 @@
+<fuse-loading-bar></fuse-loading-bar>
+
+<fuse-vertical-navigation
+    class="datta-navbar print:hidden"
+    [mode]="isScreenSmall ? 'over' : 'side'"
+    [name]="'mainNavigation'"
+    [navigation]="navigation.default"
+    [opened]="!isScreenSmall">
+    <ng-container fuseVerticalNavigationContentHeader>
+        <div class="brand">
+            <div class="brand-mark">
+                <mat-icon svgIcon="heroicons_outline:trending-up"></mat-icon>
+            </div>
+            <span class="brand-title">Datta Able</span>
+        </div>
+    </ng-container>
+</fuse-vertical-navigation>
+
+<div class="datta-shell">
+    <header class="datta-header">
+        <button mat-icon-button (click)="toggleNavigation('mainNavigation')">
+            <mat-icon svgIcon="heroicons_outline:bars-3"></mat-icon>
+        </button>
+        <div class="header-title">
+            <h2>Tableau de bord</h2>
+            <p>Vue unifiée des modules</p>
+        </div>
+        <div class="header-actions">
+            <languages></languages>
+            <fuse-fullscreen class="hidden md:block"></fuse-fullscreen>
+            <search [appearance]="'bar'"></search>
+            <notifications></notifications>
+            <user></user>
+        </div>
+    </header>
+
+    <div class="datta-content">
+        <div class="page-wrapper">
+            <router-outlet *ngIf="true"></router-outlet>
+        </div>
+    </div>
+
+    <footer class="datta-footer">
+        <span>Fuse &copy; {{currentYear}}</span>
+    </footer>
+</div>

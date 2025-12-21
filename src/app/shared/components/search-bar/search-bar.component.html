@@ -1,0 +1,20 @@
+<div class="modern-search">
+  <mat-icon class="search-icon">search</mat-icon>
+  <input
+    #searchInput
+    type="text"
+    class="search-input"
+    [placeholder]="placeholder"
+    [value]="searchValue"
+    (input)="onSearchChange($any($event.target).value)"
+    (keyup.enter)="onSearchChange(searchValue)">
+  <button
+    *ngIf="showClear && searchValue"
+    mat-icon-button
+    (click)="clearSearch()"
+    class="clear-button"
+    aria-label="Clear search">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+

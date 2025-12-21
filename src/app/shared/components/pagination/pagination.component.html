@@ -1,0 +1,69 @@
+<div class="app-pagination" [attr.aria-label]="ariaLabel">
+    <div class="app-pagination__section app-pagination__section--size">
+        <label class="app-pagination__page-size-label" id="page-size-label">Items per page</label>
+        <mat-select
+            [value]="pageSize"
+            [aria-labelledby]="'page-size-label'"
+            (selectionChange)="onPageSizeChange($event.value)"
+            panelClass="app-pagination__select-panel">
+            <mat-option *ngFor="let size of pageSizeOptions" [value]="size">
+                {{ size }}
+            </mat-option>
+        </mat-select>
+    </div>
+
+    <div class="app-pagination__section app-pagination__section--range" aria-live="polite">
+        <span class="app-pagination__range">{{ rangeStart }}–{{ rangeEnd }} of {{ length }}</span>
+    </div>
+
+    <div class="app-pagination__section app-pagination__section--actions" role="group" aria-label="Pagination navigation">
+        <button
+            type="button"
+            class="app-pagination__control"
+            [disabled]="!canGoPrevious"
+            (click)="goToFirst()"
+            [attr.aria-label]="'Aller à la première page'"
+            [attr.aria-disabled]="!canGoPrevious">
+            <span aria-hidden="true">|&lt;</span>
+        </button>
+
+        <button
+            type="button"
+            class="app-pagination__control"
+            [disabled]="!canGoPrevious"
+            (click)="goToPrevious()"
+            [attr.aria-label]="'Page précédente'"
+            [attr.aria-disabled]="!canGoPrevious">
+            <span aria-hidden="true">&lt;</span>
+        </button>
+
+        <button
+            type="button"
+            class="app-pagination__control"
+            [disabled]="!canGoNext"
+            (click)="goToNext()"
+            [attr.aria-label]="'Page suivante'"
+            [attr.aria-disabled]="!canGoNext">
+            <span aria-hidden="true">&gt;</span>
+        </button>
+
+        <button
+            type="button"
+            class="app-pagination__control"
+            [disabled]="!canGoNext"
+            (click)="goToLast()"
+            [attr.aria-label]="'Aller à la dernière page'"
+            [attr.aria-disabled]="!canGoNext">
+            <span aria-hidden="true">&gt;|</span>
+        </button>
+    </div>
+</div>
+
+<mat-paginator
+    class="app-pagination__mat-paginator"
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onMatPaginatorPage($event)">
+</mat-paginator>

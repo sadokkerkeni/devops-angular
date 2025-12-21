@@ -1,0 +1,12 @@
+<div 
+  class="modern-card"
+  [class.card-interactive]="interactive"
+  [class.card-elevated]="elevated"
+  [class]="class"
+  [style.animation-delay]="animationDelay">
+  <ng-content select="[card-header]"></ng-content>
+  <ng-content select="[card-body]"></ng-content>
+  <ng-content select="[card-footer]"></ng-content>
+  <ng-content></ng-content>
+</div>
+

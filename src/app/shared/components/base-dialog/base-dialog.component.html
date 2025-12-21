@@ -1,0 +1,69 @@
+<div class="modern-dialog">
+  <!-- Dialog Header -->
+  <div class="dialog-header">
+    <ng-container *ngIf="customHeader; else defaultHeader">
+      <ng-container *ngTemplateOutlet="customHeader"></ng-container>
+    </ng-container>
+    
+    <ng-template #defaultHeader>
+      <div class="flex items-center justify-between w-full">
+        <div>
+          <h2 class="dialog-title">{{ title }}</h2>
+          <p class="dialog-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+        </div>
+        <button 
+          mat-icon-button 
+          (click)="onClose()" 
+          [disabled]="loading"
+          class="modern-btn btn-icon"
+          aria-label="Close dialog">
+          <mat-icon [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+        </button>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- Dialog Content -->
+  <div class="dialog-content modern-scrollbar">
+    <ng-content></ng-content>
+  </div>
+
+  <!-- Dialog Footer -->
+  <div class="dialog-footer" *ngIf="showSave || showCancel || customFooter">
+    <ng-container *ngIf="customFooter; else defaultFooter">
+      <ng-container *ngTemplateOutlet="customFooter"></ng-container>
+    </ng-container>
+    
+    <ng-template #defaultFooter>
+      <div class="flex items-center justify-end gap-3">
+        <button
+          *ngIf="showCancel"
+          mat-stroked-button
+          type="button"
+          (click)="onClose()"
+          [disabled]="loading"
+          class="modern-btn btn-secondary">
+          {{ cancelLabel }}
+        </button>
+        <button
+          *ngIf="showSave"
+          mat-flat-button
+          color="primary"
+          type="button"
+          (click)="onSave()"
+          [disabled]="loading || saveDisabled"
+          class="modern-btn btn-primary">
+          <mat-progress-spinner
+            *ngIf="loading"
+            [diameter]="20"
+            [mode]="'indeterminate'"
+            class="mr-2">
+          </mat-progress-spinner>
+          <mat-icon *ngIf="!loading">{{ saveIcon }}</mat-icon>
+          <span>{{ saveLabel }}</span>
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</div>
+

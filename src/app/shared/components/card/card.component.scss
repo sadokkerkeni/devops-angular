@@ -1,0 +1,15 @@
+@import '../../../styles/modern-ui-system.scss';
+
+.modern-card {
+  // Base styles are in modern-ui-system.scss
+  // Additional component-specific styles can go here if needed
+}
+
+.card-elevated {
+  box-shadow: var(--shadow-lg) !important;
+  
+  &:hover {
+    box-shadow: var(--shadow-2xl) !important;
+  }
+}
+

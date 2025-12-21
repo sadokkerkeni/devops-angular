@@ -1,0 +1,29 @@
+<div class="modern-page-header">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <!-- Title Section -->
+    <div>
+      <h1 class="header-title">{{ title }}</h1>
+      <p class="header-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+    </div>
+
+    <!-- Custom Content -->
+    <ng-container *ngIf="customContent">
+      <ng-container *ngTemplateOutlet="customContent"></ng-container>
+    </ng-container>
+
+    <!-- Primary Action Button -->
+    <button
+      *ngIf="showAction && actionLabel && !customContent"
+      mat-flat-button
+      color="primary"
+      (click)="onActionClick()"
+      class="modern-btn btn-primary animate-fade-in">
+      <mat-icon>{{ actionIcon }}</mat-icon>
+      <span>{{ actionLabel }}</span>
+    </button>
+  </div>
+
+  <!-- Additional Actions Slot -->
+  <ng-content select="[header-actions]"></ng-content>
+</div>
+

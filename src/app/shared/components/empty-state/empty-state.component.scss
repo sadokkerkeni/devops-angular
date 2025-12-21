@@ -1,0 +1,45 @@
+@import '../../../styles/modern-ui-system.scss';
+
+.modern-empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+  min-height: 400px;
+  text-align: center;
+
+  .empty-content {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+
+  .empty-icon {
+    color: var(--color-gray-400);
+    width: 80px;
+    height: 80px;
+    font-size: 80px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .empty-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin: 0;
+  }
+
+  .empty-description {
+    font-size: 1rem;
+    color: var(--color-gray-600);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .empty-action {
+    margin-top: var(--spacing-md);
+  }
+}
+

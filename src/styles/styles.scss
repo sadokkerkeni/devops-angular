@@ -1,0 +1,435 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Import/write your custom styles here.
+/*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
+/* ----------------------------------------------------------------------------------------------------- */
+
+/* Import Global Design System - STEP 4 */
+@import 'styles/global-design-system.scss';
+
+/* Import Animations System - Phase 1 */
+@import 'styles/animations.scss';
+
+/* Import Premium SaaS Design System - Must be first for base variables */
+@import '../app/styles/saas-premium-design.scss';
+
+/* Import Premium Dialog Styles */
+@import '../app/styles/premium-dialog-styles.scss';
+
+/* Import Premium Global Enhancements */
+@import '../app/styles/premium-global-enhancements.scss';
+
+/* Import UI Improvements */
+@import '../app/styles/ui-improvements.scss';
+
+/* Import Modern UI System */
+@import '../app/styles/modern-ui-system.scss';
+
+/* Import Modern Notifications */
+@import '../app/styles/modern-notifications.scss';
+
+/* Dark Mode Fixes - CRITICAL for placeholder visibility */
+// Dark mode fixes are now handled in component-specific stylesheets
+
+/* ============================================
+   GLOBAL TEXT VISIBILITY FIX
+   ============================================ */
+/* Ensure text is visible in Material tables across all components */
+mat-table {
+
+    .mat-mdc-cell,
+    .mat-mdc-header-cell {
+        color: #111827 !important;
+        /* Force dark text on light backgrounds */
+
+        /* Ensure nested elements also have visible text */
+        span,
+        div,
+        p {
+            color: #111827 !important;
+        }
+
+        /* Icons should be gray for better visual hierarchy */
+        mat-icon:not(.mat-primary):not(.mat-accent):not(.mat-warn) {
+            color: #6b7280 !important;
+        }
+    }
+
+    /* Ensure table rows have proper background */
+    .mat-mdc-row {
+        background-color: white;
+
+        &:hover {
+            background-color: #f9fafb;
+        }
+    }
+
+    .mat-mdc-header-row {
+        background-color: #f9fafb;
+    }
+}
+
+/* Fix for mat-card content */
+mat-card {
+    background-color: white !important;
+    color: #111827 !important;
+
+    mat-card-content {
+        color: #111827 !important;
+    }
+}
+
+/* Ensure form fields have visible text */
+mat-form-field {
+    .mat-mdc-input-element {
+        color: #111827 !important;
+
+        /* Fix placeholder visibility */
+        &::placeholder {
+            color: #9ca3af !important;
+            opacity: 1 !important;
+        }
+    }
+
+    .mat-mdc-form-field-label {
+        color: #6b7280 !important;
+    }
+}
+
+/* ============================================
+   DIALOG & MODAL FIXES - Dark Backgrounds
+   ============================================ */
+/* Fix for dialogs and modals with dark backgrounds */
+.mat-mdc-dialog-container,
+mat-dialog-container,
+.cdk-overlay-pane {
+    mat-form-field {
+        .mat-mdc-input-element {
+            color: white !important;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.6) !important;
+                opacity: 1 !important;
+            }
+        }
+
+        .mat-mdc-form-field-label {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        /* Ensure outlined fields are visible on dark backgrounds */
+        .mat-mdc-text-field-wrapper {
+            .mdc-notched-outline {
+
+                .mdc-notched-outline__leading,
+                .mdc-notched-outline__notch,
+                .mdc-notched-outline__trailing {
+                    border-color: rgba(255, 255, 255, 0.3) !important;
+                }
+            }
+
+            &:hover .mdc-notched-outline {
+
+                .mdc-notched-outline__leading,
+                .mdc-notched-outline__notch,
+                .mdc-notched-outline__trailing {
+                    border-color: rgba(255, 255, 255, 0.5) !important;
+                }
+            }
+        }
+    }
+
+    /* Fix textarea visibility */
+    textarea.mat-mdc-input-element {
+        color: white !important;
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.6) !important;
+            opacity: 1 !important;
+        }
+    }
+}
+
+/* -------------------------------------------------------------
+   Habillage Datta Able : tables, boutons, formulaires
+   ------------------------------------------------------------- */
+.mat-mdc-table {
+    border-radius: var(--datta-radius);
+    border: 1px solid var(--datta-border);
+    overflow: hidden;
+    box-shadow: var(--datta-shadow);
+
+    .mat-mdc-header-row {
+        background: #f9fafb;
+        color: #3f4d67;
+        font-weight: 700;
+    }
+
+    .mat-mdc-row:hover {
+        background: #f4f7fa;
+    }
+}
+
+.mat-mdc-raised-button.mat-primary {
+    background: #04a9f5;
+}
+
+.mat-mdc-outlined-button.mat-primary {
+    border-color: #04a9f5;
+    color: #04a9f5;
+}
+
+.mat-mdc-form-field {
+    .mdc-text-field--filled {
+        background: #f0f3f6;
+    }
+
+    .mat-mdc-form-field-label {
+        color: #748892;
+    }
+}
+
+/* Page layout normalisation */
+.page-shell {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    min-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Pas d'espace en haut du premier bloc de page */
+.page-shell > *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Inputs lisibles (placeholder + texte) */
+.mat-mdc-input-element {
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important; /* force visible even with autofill */
+
+    &::placeholder {
+        color: #6b7280 !important;
+        opacity: 1 !important;
+    }
+}
+
+.mdc-text-field__input {
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+}
+
+.mat-mdc-form-field-input-control {
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+}
+
+.mat-mdc-select-value {
+    color: #111827 !important;
+}
+
+.mdc-text-field {
+    background: #ffffff;
+}
+
+/* Dialogs and overlays inherit readable text color */
+.mat-mdc-dialog-container,
+.mat-mdc-dialog-surface,
+.cdk-overlay-pane {
+    color: #111827 !important;
+}
+
+.page-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    margin-bottom: 1.5rem;
+}
+
+.page-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+
+    mat-icon {
+        color: #6366f1;
+    }
+
+    .page-card-title {
+        margin: 0;
+        font-weight: 600;
+        color: #111827;
+        font-size: 1.05rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+}
+
+.page-card-content {
+    padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.page-card-actions {
+    padding: 0 1.5rem 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+
+    button {
+        border-radius: 8px;
+        font-weight: 600;
+
+        mat-icon {
+            margin-right: 0.35rem;
+        }
+    }
+}
+
+.page-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.page-form-field {
+    width: 100%;
+
+    ::ng-deep {
+        .mat-mdc-text-field-wrapper {
+            border-radius: 12px;
+            min-height: 52px;
+            background: white;
+            border: 1px solid #e5e7eb;
+        }
+
+        .mat-mdc-form-field-icon-prefix {
+            color: #6366f1;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 0.5rem;
+        }
+
+        .mat-mdc-form-field-flex {
+            align-items: center;
+        }
+
+        .mat-mdc-input-element {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+    }
+}
+
+.page-table-wrapper {
+    overflow-x: auto;
+}
+
+.page-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: #6b7280;
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    td {
+        font-size: 0.95rem;
+        color: #111827;
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+}
+
+.page-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    background: #fef2f2;
+    color: #b91c1c;
+
+    &.active {
+        background: #ecfdf3;
+        color: #15803d;
+    }
+}
+
+.page-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.page-empty-state {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: #6b7280;
+
+    mat-icon {
+        font-size: 48px;
+        color: #9ca3af;
+        display: block;
+        margin: 0 auto 0.5rem;
+    }
+
+    h3 {
+        margin: 0.25rem 0;
+        color: #111827;
+        font-weight: 600;
+    }
+
+    p {
+        margin: 0.25rem 0;
+    }
+}
+/* Supprimer toute marge/padding supérieur résiduel sous la toolbar */
+.fuse-vertical-navigation-content,
+classy-layout,
+classy-layout > .flex,
+classy-layout router-outlet,
+classy-layout router-outlet + * {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Force full height stretch for routed components */
+classy-layout router-outlet + * {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    align-items: stretch !important;
+}
+
+/* Target the content wrapper div in classy layout */
+classy-layout > .flex.flex-col.flex-auto.w-full > .flex.flex-col.flex-auto {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+}

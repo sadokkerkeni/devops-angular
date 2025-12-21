@@ -1,0 +1,20 @@
+<div class="modern-error-state">
+  <div class="error-content">
+    <mat-icon class="error-icon" [svgIcon]="'heroicons_outline:exclamation-triangle'"></mat-icon>
+    
+    <h2 class="error-title">{{ message }}</h2>
+    
+    <p class="error-details" *ngIf="details">{{ details }}</p>
+    
+    <button
+      *ngIf="showRetry"
+      mat-flat-button
+      color="primary"
+      (click)="onRetryClick()"
+      class="modern-btn btn-primary error-action">
+      <mat-icon>refresh</mat-icon>
+      <span>{{ retryLabel }}</span>
+    </button>
+  </div>
+</div>
+

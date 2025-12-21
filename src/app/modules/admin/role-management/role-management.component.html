@@ -1,0 +1,304 @@
+<div class="page-shell role-page">
+
+  <!-- Page Header - Matching Magasin style -->
+  <header class="role-header">
+    <div class="header-content">
+      <div class="title-row">
+        <div class="title-left">
+          <h1 class="text-2xl font-bold tracking-tight text-gray-900 m-0">Gestion des Rôles</h1>
+          <span class="count-badge">{{ roles.length }} rôles</span>
+        </div>
+        <button mat-flat-button color="primary" (click)="onCreateRole()" class="cta-btn">
+          <mat-icon>add</mat-icon>
+          <span>Nouveau Rôle</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content-area">
+    <div class="role-tabs-wrapper">
+      <mat-tab-group class="premium-tabs" animationDuration="300ms">
+        <!-- Tab 1: Gestion des Rôles -->
+        <mat-tab label="Rôles">
+          <div class="role-tab-content">
+            <!-- Search -->
+            <mat-card class="page-card">
+              <div class="page-card-content">
+                <mat-form-field class="page-form-field w-full sm:max-w-md" appearance="outline">
+                  <mat-icon matPrefix>search</mat-icon>
+                  <input matInput placeholder="Nom ou ID..." [(ngModel)]="searchQuery" />
+                  <button mat-icon-button matSuffix *ngIf="searchQuery" (click)="searchQuery = ''" aria-label="Effacer">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+            </mat-card>
+
+            <!-- Roles list -->
+            <mat-card class="page-card">
+              <div class="page-card-header">
+                <mat-icon>group_work</mat-icon>
+                <h2 class="page-card-title">Liste des Rôles</h2>
+              </div>
+              <div class="page-card-content">
+                <div *ngIf="loadingRoles" class="page-empty-state">
+                  <mat-icon>hourglass_empty</mat-icon>
+                  <h3>Chargement des rôles...</h3>
+                </div>
+
+                <ng-container *ngIf="!loadingRoles">
+                  <div *ngIf="getFilteredRoles().length > 0; else emptyRoles"
+                       class="roles-grid">
+                    <div *ngFor="let role of getFilteredRoles(); trackBy: trackById" class="role-card">
+                      <div class="role-card-header">
+                        <h3>{{ role.name }}</h3>
+                        <span class="page-status-badge" [class.active]="role.state !== false">
+                          <span class="page-status-dot"></span>
+                          {{ role.state !== false ? 'Actif' : 'Inactif' }}
+                        </span>
+                      </div>
+                      <div class="role-card-body">
+                        <div class="meta"><span>ID :</span> {{ role.id }}</div>
+                        <div class="meta" *ngIf="role.creationDate">
+                          <span>Créé le :</span> {{ role.creationDate | date:'dd/MM/yyyy' }}
+                        </div>
+                      </div>
+                      <div class="role-card-actions">
+                        <button mat-stroked-button color="primary" (click)="onEditRole(role)">
+                          <mat-icon>edit</mat-icon>
+                          <span>Modifier</span>
+                        </button>
+                        <button mat-stroked-button color="warn" (click)="deleteRole(role)">
+                          <mat-icon>delete</mat-icon>
+                          <span>Supprimer</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <ng-template #emptyRoles>
+                    <div class="page-empty-state">
+                      <mat-icon>admin_panel_settings</mat-icon>
+                      <h3>Aucun rôle trouvé</h3>
+                      <p>{{ searchQuery ? 'Aucun rôle ne correspond à votre recherche.' : 'Commencez par créer un nouveau rôle.' }}</p>
+                      <button mat-flat-button color="primary" (click)="onCreateRole()">
+                        <mat-icon>add</mat-icon>
+                        <span>Créer un rôle</span>
+                      </button>
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </div>
+            </mat-card>
+          </div>
+        </mat-tab>
+
+        <!-- Tab 2: Attribution de Rôles aux Utilisateurs -->
+        <mat-tab label="Utilisateurs">
+          <div class="role-tab-content">
+
+            <!-- Users Table -->
+            <mat-card class="page-card">
+              <div class="page-card-header">
+                <mat-icon>group</mat-icon>
+                <h2 class="page-card-title">Liste des Utilisateurs</h2>
+              </div>
+              <div class="page-card-content page-table-wrapper">
+                <div *ngIf="loadingUsers" class="page-empty-state">
+                  <mat-icon>hourglass_empty</mat-icon>
+                  <h3>Chargement des utilisateurs...</h3>
+                </div>
+
+                <ng-container *ngIf="!loadingUsers">
+                  <table mat-table [dataSource]="users" class="page-table" *ngIf="users.length > 0">
+                    <ng-container matColumnDef="id">
+                      <th mat-header-cell *matHeaderCellDef>ID</th>
+                      <td mat-cell *matCellDef="let user">{{ user.id }}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="fullName">
+                      <th mat-header-cell *matHeaderCellDef>Nom Complet</th>
+                      <td mat-cell *matCellDef="let user">{{ user.fullName }}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="matricule">
+                      <th mat-header-cell *matHeaderCellDef>Matricule</th>
+                      <td mat-cell *matCellDef="let user">{{ user.matricule }}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="email">
+                      <th mat-header-cell *matHeaderCellDef>Email</th>
+                      <td mat-cell *matCellDef="let user">{{ user.email }}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="roles">
+                      <th mat-header-cell *matHeaderCellDef>Rôles</th>
+                      <td mat-cell *matCellDef="let user">
+                        <div class="flex flex-wrap gap-4">
+                          <span *ngFor="let role of user.roles" class="page-status-badge active">
+                            <span class="page-status-dot"></span>
+                            {{ role.name }}
+                          </span>
+                        </div>
+                      </td>
+                    </ng-container>
+                    <ng-container matColumnDef="actions">
+                      <th mat-header-cell *matHeaderCellDef class="actions-header">Actions</th>
+                      <td mat-cell *matCellDef="let user" class="actions-cell">
+                        <button mat-icon-button color="primary" (click)="onSelectUser(user)">
+                          <mat-icon>manage_accounts</mat-icon>
+                        </button>
+                      </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="userDisplayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: userDisplayedColumns;"></tr>
+                  </table>
+
+                  <div *ngIf="users.length === 0" class="page-empty-state">
+                    <mat-icon>group_off</mat-icon>
+                    <h3>Aucun utilisateur</h3>
+                    <p>Commencez par créer des utilisateurs.</p>
+                  </div>
+                </ng-container>
+              </div>
+            </mat-card>
+
+            <!-- Role Assignment Panel -->
+            <mat-card *ngIf="selectedUser" class="page-card">
+              <div class="page-card-header">
+                <mat-icon>tune</mat-icon>
+                <h3 class="page-card-title">Gérer les rôles de {{ selectedUser.fullName }}</h3>
+                <span class="flex-1"></span>
+                <button mat-icon-button (click)="deselectUser()">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </div>
+
+              <div class="page-card-content">
+                <div class="role-assign-grid">
+                  <div *ngFor="let role of roles" class="role-assign-item">
+                    <span class="role-name">{{ role.name }}</span>
+                    <mat-checkbox [checked]="isRoleAssigned(role.id)" (change)="toggleRole(role.id)"
+                      [disabled]="assigningRoles">
+                    </mat-checkbox>
+                  </div>
+                </div>
+              </div>
+
+              <div class="page-card-actions">
+                <button mat-stroked-button (click)="deselectUser()" [disabled]="assigningRoles">
+                  Annuler
+                </button>
+                <button mat-flat-button color="primary" (click)="saveRoles()" [disabled]="assigningRoles">
+                  <mat-spinner *ngIf="assigningRoles" diameter="20" class="mr-2"></mat-spinner>
+                  <span *ngIf="!assigningRoles">Enregistrer</span>
+                  <span *ngIf="assigningRoles">Enregistrement...</span>
+                </button>
+              </div>
+            </mat-card>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </main>
+</div>
+
+<!-- Create/Edit Role Dialog -->
+<div *ngIf="showCreateDialog || showEditDialog"
+  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in">
+  <div class="premium-dialog bg-white rounded-2xl shadow-2xl max-w-xl w-full mx-4 animate-scale-in">
+    <div class="dialog-header">
+      <h2 class="dialog-title">
+        <mat-icon class="dialog-title-icon">{{ showCreateDialog ? 'add' : 'edit' }}</mat-icon>
+        {{ showCreateDialog ? 'Créer un nouveau rôle' : 'Modifier le rôle' }}
+      </h2>
+      <button mat-icon-button (click)="closeDialogs()" class="premium-btn btn-secondary">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <div class="dialog-body" *ngIf="!loadingRoles; else roleLoadingTemplate">
+      <ng-container *ngIf="!showEditDialog || selectedRole; else missingRoleContext">
+        <div class="dialog-intro">
+          <p *ngIf="selectedRole && showEditDialog" class="dialog-context">
+            Vous éditez le rôle <strong>#{{ selectedRole?.id }}</strong>. Mettez à jour son nom et ses paramètres.
+          </p>
+          <p *ngIf="showCreateDialog" class="dialog-context">
+            Définissez un nom lisible pour ce nouveau rôle. Vous pourrez lui affecter des permissions ensuite.
+          </p>
+        </div>
+
+        <div *ngIf="roleDialogError" class="dialog-alert dialog-alert--error" role="alert" aria-live="assertive">
+          <div class="dialog-alert__icon">
+            <mat-icon>error_outline</mat-icon>
+          </div>
+          <div class="dialog-alert__content">
+            <strong>Impossible d'enregistrer</strong>
+            <span>{{ roleDialogError }}</span>
+          </div>
+          <button mat-icon-button type="button" (click)="roleDialogError = ''" aria-label="Fermer l’alerte">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+
+        <div class="dialog-form-grid">
+          <mat-form-field class="premium-form-field full-width" appearance="outline">
+            <mat-label>Nom du rôle</mat-label>
+            <input matInput [(ngModel)]="roleForm.name" required placeholder="Ex : Administrateur"
+                   [disabled]="savingRole">
+            <mat-icon matPrefix>badge</mat-icon>
+            <mat-hint>Utilisez un nom unique et explicite.</mat-hint>
+            <mat-error *ngIf="!roleForm.name.trim()">Le nom du rôle est obligatoire.</mat-error>
+          </mat-form-field>
+
+          <div class="dialog-toggle-row">
+            <label class="toggle-label">
+              <mat-icon>verified_user</mat-icon>
+              Rôle actif
+            </label>
+            <mat-slide-toggle color="primary" [(ngModel)]="roleForm.state" [disabled]="savingRole">
+              {{ roleForm.state ? 'Actif' : 'Inactif' }}
+            </mat-slide-toggle>
+          </div>
+        </div>
+
+        <div class="dialog-permissions">
+          <div class="dialog-permissions__header">
+            <h3>Permissions associées</h3>
+            <span class="badge badge-soft">Bientôt</span>
+          </div>
+          <p class="dialog-permissions__hint">
+            La gestion fine des permissions sera ajoutée prochainement. Pour l’instant seul le nom est modifiable.
+          </p>
+          <div class="permissions-placeholder">
+            <mat-icon>lock</mat-icon>
+            <span>Module permissions en cours d’activation…</span>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #missingRoleContext>
+        <div class="dialog-loader">
+          <mat-icon>search_off</mat-icon>
+          <p>Aucun rôle sélectionné. Fermez la fenêtre et réessayez.</p>
+        </div>
+      </ng-template>
+    </div>
+
+    <ng-template #roleLoadingTemplate>
+      <div class="dialog-loader">
+        <mat-spinner diameter="36"></mat-spinner>
+        <p>Chargement du rôle…</p>
+      </div>
+    </ng-template>
+
+    <div class="dialog-actions">
+      <button mat-button (click)="closeDialogs()" class="premium-btn btn-secondary">
+        Annuler
+      </button>
+      <button mat-flat-button color="primary" (click)="saveRole()" [disabled]="!roleForm.name.trim() || savingRole"
+        class="premium-btn btn-primary">
+        <mat-spinner *ngIf="savingRole" diameter="20" class="spinner-inline"></mat-spinner>
+        <mat-icon *ngIf="!savingRole">{{ showCreateDialog ? 'add' : 'save' }}</mat-icon>
+        <span>{{ savingRole ? 'Enregistrement…' : (showCreateDialog ? 'Créer' : 'Enregistrer') }}</span>
+      </button>
+    </div>
+  </div>
+</div>

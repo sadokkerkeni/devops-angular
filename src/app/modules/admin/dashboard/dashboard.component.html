@@ -1,0 +1,99 @@
+<div class="dashboard-container page-fade-in-up page-shell">
+  <!-- Header -->
+  <div class="dashboard-header">
+    <div class="header-content">
+      <div class="header-left">
+        <mat-icon class="header-icon">dashboard</mat-icon>
+        <h1 class="header-title">Dashboard</h1>
+        <span class="header-subtitle">Vue d'ensemble en temps réel</span>
+      </div>
+      <div class="header-right">
+        <span class="last-refresh">
+          Dernière actualisation: {{ lastRefresh | date:'HH:mm:ss' }}
+        </span>
+        <button mat-stroked-button (click)="manualRefresh()" class="refresh-button">
+          <mat-icon>refresh</mat-icon>
+          <span class="hidden sm:inline ml-2">Actualiser</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="dashboard-content">
+    <!-- KPI Cards Grid -->
+    <div class="kpi-grid">
+      <app-kpi-card *ngFor="let kpi of kpiCards; let i = index" [data]="kpi"
+        class="kpi-grid-item stagger-item hover-lift">
+      </app-kpi-card>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="charts-section">
+      <!-- Évolution du Stock -->
+      <mat-card class="chart-card chart-large">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>show_chart</mat-icon>
+          <mat-card-title>Évolution du Stock</mat-card-title>
+          <mat-card-subtitle>7 derniers jours</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <app-stock-evolution-chart></app-stock-evolution-chart>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Top 10 Articles -->
+      <mat-card class="chart-card chart-medium">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>emoji_events</mat-icon>
+          <mat-card-title>Top 10 Articles</mat-card-title>
+          <mat-card-subtitle>Plus de mouvements</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <app-top-articles-chart></app-top-articles-chart>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Activity & Alerts Section -->
+    <div class="activity-section">
+      <!-- Activité Picklists -->
+      <mat-card class="activity-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>analytics</mat-icon>
+          <mat-card-title>Activité Picklists</mat-card-title>
+          <mat-card-subtitle>7 derniers jours</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <app-activity-chart></app-activity-chart>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Alertes Récentes -->
+      <mat-card class="alerts-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>notifications_active</mat-icon>
+          <mat-card-title>Alertes Récentes</mat-card-title>
+          <mat-card-subtitle>Dernières 24h</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <app-alerts-widget></app-alerts-widget>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="timeline-section">
+      <mat-card class="timeline-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>schedule</mat-icon>
+          <mat-card-title>Timeline d'activité</mat-card-title>
+          <mat-card-subtitle>Dernières 24 heures</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <app-timeline-widget></app-timeline-widget>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

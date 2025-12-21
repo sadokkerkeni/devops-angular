@@ -1,0 +1,118 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+/* Compact pagination bar - matches screenshot style */
+.app-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 10px 16px;
+    background: #fff;
+    border-top: 1px solid #e5e7eb;
+
+    /* Left section: Items per page */
+    &__section {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &--size {
+            mat-select {
+                min-width: 56px;
+                font-size: 13px;
+
+                .mat-mdc-select-value {
+                    color: #374151;
+                }
+
+                .mat-mdc-select-trigger {
+                    padding: 4px 8px;
+                    border: 1px solid #d1d5db;
+                    border-radius: 4px;
+                    background: #fff;
+                    height: 28px;
+                }
+            }
+        }
+
+        &--range {
+            color: #6b7280;
+            font-size: 13px;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        &--actions {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+    }
+
+    &__page-size-label {
+        font-size: 13px;
+        color: #6b7280;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+
+    &__range {
+        font-size: 13px;
+        color: #6b7280;
+    }
+
+    /* Arrow controls */
+    &__control {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        border: none;
+        border-radius: 4px;
+        background: transparent;
+        color: #6b7280;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 150ms ease;
+        user-select: none;
+
+        &:hover:not([disabled]) {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        &:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+
+        &[disabled] {
+            color: #d1d5db;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        span {
+            line-height: 1;
+        }
+    }
+
+    /* Hidden native mat-paginator */
+    &__mat-paginator {
+        display: none !important;
+    }
+}
+
+/* Override mat-select panel styles */
+::ng-deep .app-pagination__select-panel {
+    .mat-mdc-option {
+        font-size: 13px;
+        min-height: 36px;
+    }
+}

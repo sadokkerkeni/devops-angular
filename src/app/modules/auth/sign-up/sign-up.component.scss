@@ -1,0 +1,247 @@
+/**
+ * Sign-Up Form - Professional Spacing Guidelines
+ * 
+ * Spacing System: 4px/8px/12px/16px increments
+ * - 4-6px: Space between input and error message
+ * - 12-16px: Space before next input field
+ * - Responsive and modern UI/UX standards
+ */
+
+// ============================================
+// GLOBAL FORM STYLES
+// ============================================
+form {
+    .mat-mdc-form-field {
+        width: 100%;
+        margin-bottom: 0 !important;
+    }
+}
+
+// ============================================
+// FORM FIELD WRAPPER - Main Container
+// ============================================
+.form-field-wrapper {
+    display: block;
+    position: relative;
+    margin-bottom: 16px !important; // 16px space before next field (guideline: 12-16px)
+    min-height: auto; // Let content determine height
+    
+    .mat-mdc-form-field {
+        margin-bottom: 0 !important;
+        width: 100%;
+    }
+}
+
+// ============================================
+// ANGULAR MATERIAL FORM FIELD OVERRIDES
+// ============================================
+::ng-deep {
+    // Main form field container
+    .mat-mdc-form-field {
+        display: block !important;
+        position: relative !important;
+        margin-bottom: 0 !important;
+        
+        // Text field wrapper - no extra margin
+        .mat-mdc-text-field-wrapper {
+            margin-bottom: 0 !important;
+        }
+        
+        // Subscript wrapper (contains errors and hints)
+        // This is the container below the input field
+        .mat-mdc-form-field-subscript-wrapper {
+            position: relative !important;
+            margin-top: 6px !important; // 6px space between input and error (guideline: 4-6px)
+            margin-bottom: 0 !important;
+            height: auto !important;
+            min-height: 20px !important; // Reserve space for error message
+            max-height: none !important;
+            overflow: visible !important;
+            padding: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        
+        // Error wrapper container
+        .mat-mdc-form-field-error-wrapper {
+            position: relative !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: auto !important;
+            min-height: 20px !important;
+            order: 2; // Error appears after hint
+        }
+        
+        // Error message styling
+        .mat-mdc-form-field-error {
+            display: block !important;
+            position: relative !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.4 !important; // Comfortable line height
+            white-space: normal !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            word-break: break-word !important;
+            overflow: visible !important;
+            font-size: 12px !important; // Professional readable size
+            font-weight: 400 !important;
+            max-width: 100% !important;
+            color: #d32f2f !important; // Material Design error color
+        }
+        
+        // Hint wrapper container
+        .mat-mdc-form-field-hint-wrapper {
+            position: relative !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            height: auto !important;
+            min-height: 16px !important;
+            order: 1; // Hint appears before error
+        }
+        
+        // Hint text styling
+        .mat-mdc-form-field-hint {
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 12px !important;
+            line-height: 1.4 !important;
+            color: rgba(0, 0, 0, 0.6) !important;
+            white-space: normal !important;
+            word-wrap: break-word !important;
+        }
+        
+        // When error is shown, hide hint
+        &.mat-form-field-has-error {
+            .mat-mdc-form-field-hint-wrapper {
+                display: none !important;
+            }
+        }
+    }
+    
+    // Ensure proper spacing in form context
+    form .form-field-wrapper {
+        isolation: isolate; // Create new stacking context for each field
+        
+        // Add extra bottom margin when error is present
+        &:has(.mat-mdc-form-field-error) {
+            margin-bottom: 16px !important; // Maintain 16px spacing even with errors
+        }
+    }
+}
+
+// ============================================
+// CHECKBOX FIELD (Agreements)
+// ============================================
+.inline-flex.flex-col {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 16px !important; // Consistent 16px spacing
+    margin-top: 0 !important;
+    min-height: auto;
+    
+    mat-checkbox {
+        margin-bottom: 0 !important;
+    }
+    
+    // Error message for checkbox
+    .text-red-500 {
+        margin-top: 6px !important; // 6px space after checkbox (guideline: 4-6px)
+        margin-left: 0 !important;
+        margin-bottom: 0 !important;
+        padding-left: 24px !important; // Align with checkbox text
+        display: block;
+        position: relative;
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        color: #d32f2f !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+}
+
+// ============================================
+// RESPONSIVE DESIGN
+// ============================================
+@media (max-width: 768px) {
+    .form-field-wrapper {
+        margin-bottom: 16px !important; // Maintain spacing on mobile
+    }
+    
+    ::ng-deep {
+        .mat-mdc-form-field {
+            .mat-mdc-form-field-subscript-wrapper {
+                margin-top: 6px !important; // Consistent spacing
+            }
+            
+            .mat-mdc-form-field-error {
+                font-size: 11px !important; // Slightly smaller on mobile
+            }
+            
+            .mat-mdc-form-field-hint {
+                font-size: 11px !important;
+            }
+        }
+    }
+    
+    .inline-flex.flex-col {
+        margin-bottom: 16px !important;
+        
+        .text-red-500 {
+            font-size: 11px !important;
+            padding-left: 20px !important; // Slightly less padding on mobile
+        }
+    }
+}
+
+// ============================================
+// ACCESSIBILITY & UX ENHANCEMENTS
+// ============================================
+::ng-deep {
+    // Smooth transitions for error appearance
+    .mat-mdc-form-field-error {
+        animation: fadeInError 0.2s ease-in;
+    }
+    
+    @keyframes fadeInError {
+        from {
+            opacity: 0;
+            transform: translateY(-4px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    // Ensure error messages don't cause layout shifts
+    .mat-mdc-form-field-subscript-wrapper {
+        transition: min-height 0.2s ease-in-out;
+    }
+    
+    // Prevent text selection issues
+    .mat-mdc-form-field-error,
+    .mat-mdc-form-field-hint {
+        user-select: text;
+        -webkit-user-select: text;
+    }
+}
+
+// ============================================
+// PRINT STYLES (Optional)
+// ============================================
+@media print {
+    .form-field-wrapper {
+        margin-bottom: 12px !important;
+        page-break-inside: avoid;
+    }
+    
+    ::ng-deep {
+        .mat-mdc-form-field-error {
+            color: #000 !important;
+            font-size: 10px !important;
+        }
+    }
+}
+

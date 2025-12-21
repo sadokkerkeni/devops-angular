@@ -1,0 +1,153 @@
+<!-- Modern Warehouse UI - Complete Redesign -->
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden bg-gray-50">
+
+    <!-- Modern Page Header -->
+    <div class="modern-page-header">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+                <h1 class="header-title">Entrepôts</h1>
+                <p class="header-subtitle">Gérez vos entrepôts et leurs configurations</p>
+            </div>
+            <button 
+                mat-flat-button 
+                color="primary" 
+                (click)="onCreate()" 
+                class="modern-btn btn-primary animate-fade-in">
+                <mat-icon>add</mat-icon>
+                <span>Nouvel Entrepôt</span>
+            </button>
+        </div>
+
+        <!-- Search & Filters -->
+        <div class="header-actions">
+            <div class="modern-search flex-1 sm:max-w-md">
+                <mat-icon class="search-icon">search</mat-icon>
+                <input 
+                    #q 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Rechercher par nom ou code..."
+                    (input)="q.value = $any($event.target).value">
+                <button 
+                    *ngIf="q.value" 
+                    mat-icon-button 
+                    (click)="q.value = ''" 
+                    class="absolute right-2 top-1/2 -translate-y-1/2"
+                    style="position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%);">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+            <button 
+                mat-stroked-button 
+                (click)="toggleActiveFilter()" 
+                class="modern-btn btn-secondary">
+                <mat-icon>filter_list</mat-icon>
+                <span class="hidden sm:inline">{{ currentFilter === 'all' ? 'Tous' : (currentFilter === 'active' ? 'Actifs' : 'Inactifs') }}</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-auto overflow-y-auto modern-scrollbar">
+        <!-- Loading State -->
+        <div *ngIf="loading" class="modern-loading">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Chargement des entrepôts...</p>
+        </div>
+
+        <!-- Content -->
+        <ng-container *ngIf="!loading">
+            <!-- Warehouses Grid -->
+            <div class="p-6 md:p-8" *ngIf="inventories && inventories.length > 0; else emptyState">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <ng-container *ngFor="let warehouse of inventories; trackBy: trackById">
+                        <ng-container *ngIf="!q.value || (warehouse.name?.toLowerCase().includes(q.value.toLowerCase()) || (warehouse.code||'').toLowerCase().includes(q.value.toLowerCase()))">
+                            <div class="modern-card card-interactive animate-fade-in-up" [style.animation-delay]="'0.' + ($index % 10) + 's'">
+                                <!-- Card Header -->
+                                <div class="card-header">
+                                    <div class="flex items-center gap-3 flex-1 min-w-0">
+                                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-semibold">
+                                            {{ warehouse.name?.charAt(0)?.toUpperCase() || 'W' }}
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h3 class="text-lg font-semibold text-gray-900 truncate">{{ warehouse.name }}</h3>
+                                            <p class="text-xs text-gray-500 mt-0.5">ID: {{ warehouse.id }}</p>
+                                        </div>
+                                    </div>
+                                    <span 
+                                        class="status-badge" 
+                                        [ngClass]="warehouse.isActive ? 'badge-success' : 'badge-neutral'">
+                                        {{ warehouse.isActive ? 'Actif' : 'Inactif' }}
+                                    </span>
+                                </div>
+
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <p class="text-xs text-gray-500 mb-1">Code</p>
+                                        <p class="text-sm font-medium text-gray-900">{{ warehouse.code || '—' }}</p>
+                                    </div>
+                                    
+                                    <div class="flex items-center gap-4 text-xs text-gray-500">
+                                        <div class="flex items-center gap-1">
+                                            <mat-icon class="icon-size-4">inventory</mat-icon>
+                                            <span>Entrepôt</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card Footer -->
+                                <div class="card-footer">
+                                    <button 
+                                        mat-stroked-button 
+                                        color="primary" 
+                                        (click)="onView(warehouse.id)" 
+                                        class="modern-btn btn-secondary flex-1">
+                                        <mat-icon>visibility</mat-icon>
+                                        <span>Voir</span>
+                                    </button>
+                                    <button 
+                                        mat-stroked-button 
+                                        color="accent" 
+                                        (click)="onEdit(warehouse)" 
+                                        class="modern-btn btn-secondary flex-1">
+                                        <mat-icon>edit</mat-icon>
+                                        <span>Modifier</span>
+                                    </button>
+                                    <button 
+                                        mat-stroked-button 
+                                        [color]="warehouse.isActive ? 'warn' : 'accent'" 
+                                        (click)="onToggleActive(warehouse.id, warehouse.isActive)" 
+                                        class="modern-btn btn-secondary">
+                                        <mat-icon>{{ warehouse.isActive ? 'toggle_on' : 'toggle_off' }}</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <ng-template #emptyState>
+                <div class="modern-empty-state">
+                    <mat-icon [svgIcon]="'heroicons_outline:building-office'" class="empty-icon icon-size-20"></mat-icon>
+                    <h2 class="empty-title">Aucun entrepôt trouvé</h2>
+                    <p class="empty-description">
+                        {{ q.value 
+                            ? 'Aucun entrepôt ne correspond à votre recherche. Essayez de modifier vos critères.' 
+                            : 'Commencez par créer votre premier entrepôt pour organiser votre inventaire.' }}
+                    </p>
+                    <button 
+                        mat-flat-button 
+                        color="primary" 
+                        (click)="onCreate()" 
+                        class="modern-btn btn-primary empty-action">
+                        <mat-icon>add</mat-icon>
+                        <span>Créer le premier entrepôt</span>
+                    </button>
+                </div>
+            </ng-template>
+        </ng-container>
+    </div>
+</div>

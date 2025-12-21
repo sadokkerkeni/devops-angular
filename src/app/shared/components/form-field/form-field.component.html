@@ -1,0 +1,36 @@
+<div class="modern-form-field">
+  <mat-form-field 
+    appearance="outline" 
+    class="full-width"
+    [class.field-error]="hasError()">
+    <mat-label *ngIf="label">{{ label }}<span *ngIf="required" class="required-indicator">*</span></mat-label>
+    
+    <!-- Prefix Icon -->
+    <mat-icon 
+      *ngIf="icon && iconPosition === 'prefix'" 
+      matPrefix
+      [svgIcon]="icon.startsWith('heroicons') ? icon : null">
+      {{ icon.startsWith('heroicons') ? '' : icon }}
+    </mat-icon>
+    
+    <!-- Field Content (projected) -->
+    <ng-content></ng-content>
+    
+    <!-- Suffix Icon -->
+    <mat-icon 
+      *ngIf="icon && iconPosition === 'suffix'" 
+      matSuffix
+      [svgIcon]="icon.startsWith('heroicons') ? icon : null">
+      {{ icon.startsWith('heroicons') ? '' : icon }}
+    </mat-icon>
+    
+    <!-- Hint -->
+    <mat-hint *ngIf="hint && !hasError()">{{ hint }}</mat-hint>
+    
+    <!-- Error Message -->
+    <mat-error *ngIf="hasError()">
+      {{ getErrorMessage() }}
+    </mat-error>
+  </mat-form-field>
+</div>
+

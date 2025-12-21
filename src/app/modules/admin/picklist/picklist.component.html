@@ -1,0 +1,234 @@
+<div class="flex flex-col min-w-0 overflow-hidden page-shell">
+
+  <!-- Compact Header -->
+  <div class="sticky top-0 z-10 border-b border-gray-200 bg-white shadow-sm">
+    <div class="flex flex-col gap-2 px-4 py-2">
+      <!-- Title Row -->
+      <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <div class="text-xl font-bold text-gray-900">Gestion des Picklistes</div>
+          <span
+            class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 text-white">{{
+            displayedPicklists?.length || 0 }}</span>
+        </div>
+        <button mat-flat-button color="primary" (click)="openCreateDialog()"
+          class="shadow-md hover:shadow-lg transition-shadow">
+          <mat-icon>add</mat-icon>
+          <span class="ml-1 hidden sm:inline">Nouvelle</span>
+        </button>
+      </div>
+
+      <!-- Compact Filters Row -->
+      <div class="flex flex-wrap items-center gap-2">
+        <!-- Search -->
+        <mat-form-field appearance="outline" class="flex-1 min-w-[200px]" subscriptSizing="dynamic">
+          <mat-icon matPrefix class="text-gray-400">search</mat-icon>
+          <input matInput [(ngModel)]="searchQuery" placeholder="Rechercher..." (input)="applyFilters()">
+          <button mat-icon-button matSuffix *ngIf="searchQuery" (click)="clearSearch()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <!-- Magasin -->
+        <mat-form-field appearance="outline" class="w-32" subscriptSizing="dynamic">
+          <mat-label>Magasin</mat-label>
+          <mat-select [(ngModel)]="selectedWarehouseId" (selectionChange)="applyFilters()">
+            <mat-option [value]="null">Tous</mat-option>
+            <mat-option *ngFor="let w of warehouses" [value]="w.id">{{ w.name }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Ligne -->
+        <mat-form-field appearance="outline" class="w-32" subscriptSizing="dynamic">
+          <mat-label>Ligne</mat-label>
+          <mat-select [(ngModel)]="selectedLineId" (selectionChange)="applyFilters()">
+            <mat-option [value]="null">Toutes</mat-option>
+            <mat-option *ngFor="let l of lines" [value]="l.id">{{ l.description }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Status Chips - Inline -->
+        <mat-chip-set multiple class="flex-1">
+          <mat-chip-option *ngFor="let status of availableStatuses" [selected]="isStatusSelected(status.id)"
+            (click)="toggleStatusFilter(status.id)">
+            {{ status.description }}
+          </mat-chip-option>
+        </mat-chip-set>
+
+        <!-- Reset Button -->
+        <button mat-icon-button (click)="resetFilters()" matTooltip="Réinitialiser" *ngIf="hasActiveFilters()">
+          <mat-icon>filter_alt_off</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-auto overflow-y-auto p-2 md:p-4">
+
+    <!-- Loading Skeleton -->
+    <app-skeleton-loader *ngIf="loading" type="table" [rows]="8"></app-skeleton-loader>
+
+    <!-- Empty State -->
+    <div *ngIf="!loading && filteredPicklists().length === 0"
+      class="flex flex-col items-center justify-center py-16 px-4">
+      <div class="text-center max-w-md">
+        <!-- Icon -->
+        <div class="mx-auto flex items-center justify-center h-24 w-24 rounded-full bg-gray-100 mb-6">
+          <mat-icon class="text-gray-400 text-6xl">list_alt</mat-icon>
+        </div>
+
+        <!-- Message -->
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          {{ hasActiveFilters() ? 'Aucun résultat trouvé' : 'Aucune pickliste' }}
+        </h3>
+        <p class="text-gray-600 mb-6">
+          {{ hasActiveFilters()
+          ? 'Essayez de modifier vos filtres pour voir plus de résultats.'
+          : 'Commencez par créer votre première pickliste.'
+          }}
+        </p>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <button *ngIf="hasActiveFilters()" mat-stroked-button (click)="resetFilters()"
+            class="flex items-center gap-2">
+            <mat-icon>filter_alt_off</mat-icon>
+            Réinitialiser les filtres
+          </button>
+          <button mat-flat-button color="primary" (click)="openCreateDialog()" class="flex items-center gap-2">
+            <mat-icon>add</mat-icon>
+            Créer une pickliste
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table Wrapper -->
+    <div *ngIf="!loading && filteredPicklists().length > 0"
+      class="w-full h-full rounded-lg shadow-sm border border-gray-200 dark:border-slate-700 animate-fade-in flex flex-col">
+      <!-- Results Counter -->
+      <div class="px-3 py-2 bg-gray-50 border-b border-gray-200 flex items-center justify-between flex-shrink-0">
+        <span class="text-xs text-gray-700 font-medium">
+          Affichage de <span class="font-semibold text-gray-900">{{ currentPage * pageSize + 1 }}</span>
+          à <span class="font-semibold text-gray-900">{{ Math.min((currentPage + 1) * pageSize, totalItems) }}</span>
+          sur <span class="font-semibold text-gray-900">{{ totalItems }}</span> résultat(s)
+        </span>
+        <span class="text-xs text-gray-600 hidden sm:inline">
+          Cliquez sur les colonnes pour trier
+        </span>
+      </div>
+
+      <div class="overflow-x-auto flex-1">
+        <mat-table [dataSource]="paginatedPicklists()" class="w-full bg-white text-sm">
+
+          <!-- ID -->
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef
+              class="bg-gray-100 text-gray-900 font-semibold uppercase px-3 py-2 border-b whitespace-nowrap cursor-pointer hover:bg-gray-200 transition-colors"
+              (click)="onSortChange('id')">
+              <div class="flex items-center gap-1">
+                ID
+                <mat-icon class="text-sm">{{ getSortIcon('id') }}</mat-icon>
+              </div>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let p" class="px-4 py-2 border-b whitespace-nowrap">
+              <span class="font-mono text-xs bg-gray-100 px-2 py-1 rounded text-gray-900">{{ p.id }}</span>
+            </mat-cell>
+          </ng-container>
+
+          <!-- Name -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef
+              class="bg-gray-100 text-gray-900 font-semibold uppercase px-3 py-2 border-b whitespace-nowrap cursor-pointer hover:bg-gray-200 transition-colors"
+              (click)="onSortChange('name')">
+              <div class="flex items-center gap-1">
+                Nom
+                <mat-icon class="text-sm">{{ getSortIcon('name') }}</mat-icon>
+              </div>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let p" class="px-4 py-2 border-b whitespace-nowrap">
+              <span class="font-medium text-gray-900">{{ p.name || 'N/A' }}</span>
+            </mat-cell>
+          </ng-container>
+
+          <!-- Status -->
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef
+              class="bg-gray-100 text-gray-900 font-semibold uppercase px-3 py-2 border-b whitespace-nowrap cursor-pointer hover:bg-gray-200 transition-colors"
+              (click)="onSortChange('status')">
+              <div class="flex items-center gap-1">
+                Statut
+                <mat-icon class="text-sm">{{ getSortIcon('status') }}</mat-icon>
+              </div>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let p" class="px-3 py-2 border-b whitespace-nowrap">
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold gap-1" [ngClass]="{
+              'bg-orange-100 text-orange-900': p.status?.description?.toLowerCase().includes('réceptionnée'),
+              'bg-red-100 text-red-900': p.status?.description?.toLowerCase().includes('nonservie'),
+              'bg-green-100 text-green-900': p.status?.description?.toLowerCase().includes('servie') && !p.status?.description?.toLowerCase().includes('non'),
+              'bg-gray-100 text-gray-900': !p.status?.description
+            }">
+                <span class="status-dot" [ngClass]="{
+                    'bg-orange-500': p.status?.description?.toLowerCase().includes('réceptionnée'),
+                    'bg-red-500': p.status?.description?.toLowerCase().includes('nonservie'),
+                    'bg-green-500': p.status?.description?.toLowerCase().includes('servie') && !p.status?.description?.toLowerCase().includes('non'),
+                    'bg-gray-500': !p.status?.description
+                  }"></span>
+                {{ p.status?.description || 'N/A' }}
+              </span>
+            </mat-cell>
+          </ng-container>
+
+          <!-- Actions -->
+          <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef
+              class="bg-gray-100 text-gray-900 font-semibold uppercase px-3 py-2 border-b whitespace-nowrap">
+              Actions
+            </mat-header-cell>
+            <mat-cell *matCellDef="let p" class="px-3 py-2 border-b flex gap-2 whitespace-nowrap">
+              <button mat-icon-button color="accent" (click)="editPicklist(p)" matTooltip="Modifier la picklist"
+                [disabled]="actionLoading[p.id]">
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button color="primary" (click)="goToPicklistDetails(p.id)"
+                matTooltip="Voir les détails et articles" [disabled]="actionLoading[p.id]">
+                <mat-icon>visibility</mat-icon>
+              </button>
+
+              <!-- Contextual Actions based on Status -->
+              <button mat-icon-button color="primary" *ngIf="p.status?.description?.toLowerCase().includes('nonservie')"
+                (click)="onMarkReady(p)" matTooltip="Marquer comme Prête" [disabled]="actionLoading[p.id]">
+                <mat-spinner *ngIf="actionLoading[p.id]" diameter="20"></mat-spinner>
+                <mat-icon *ngIf="!actionLoading[p.id]">check_circle</mat-icon>
+              </button>
+
+              <button mat-icon-button color="accent"
+                *ngIf="p.status?.description?.toLowerCase().includes('servie') && !p.status?.description?.toLowerCase().includes('non')"
+                (click)="onStartShipping(p)" matTooltip="Démarrer l'expédition" [disabled]="actionLoading[p.id]">
+                <mat-spinner *ngIf="actionLoading[p.id]" diameter="20"></mat-spinner>
+                <mat-icon *ngIf="!actionLoading[p.id]">local_shipping</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns" class="bg-gray-50"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"
+            class="hover:bg-gray-50 transition duration-200 ease-in-out"></mat-row>
+        </mat-table>
+      </div>
+
+      <!-- Pagination -->
+      <div class="border-t border-gray-200 flex-shrink-0">
+        <app-pagination
+          [length]="totalItems"
+          [pageSize]="pageSize"
+          [pageSizeOptions]="pageSizeOptions"
+          [pageIndex]="currentPage"
+          (page)="onPageChange($event)">
+        </app-pagination>
+      </div>
+    </div>
+  </div>
+</div>

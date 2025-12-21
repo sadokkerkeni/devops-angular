@@ -1,0 +1,31 @@
+@import '../../../styles/modern-ui-system.scss';
+
+.modern-page-header {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-lg);
+  background: white;
+  border-bottom: 1px solid var(--color-gray-200);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .header-title {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 var(--spacing-xs) 0;
+    line-height: 1.2;
+  }
+
+  .header-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+

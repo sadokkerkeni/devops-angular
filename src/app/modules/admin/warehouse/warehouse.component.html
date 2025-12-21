@@ -1,0 +1,165 @@
+<!-- Layout principal - Structure stricte demandée -->
+<div class="page-container">
+
+    <!-- Header Sticky - ZERO TOP SPACING -->
+    <div class="sticky top-0 z-10 border-b border-gray-200 bg-white shadow-sm warehouse-header">
+        <div class="flex flex-col gap-3 warehouse-header-content">
+            <!-- Title Row -->
+            <div class="warehouse-title-row">
+                <div class="warehouse-title-group">
+                    <h1 class="warehouse-main-title">Magasins</h1>
+                    <span class="warehouse-count-badge">{{ displayedWarehouses.length || 0 }} items</span>
+                </div>
+                <button mat-flat-button color="primary" (click)="onCreate()" class="warehouse-create-btn">
+                    <mat-icon>add</mat-icon>
+                    <span>Nouveau Magasin</span>
+                </button>
+            </div>
+            <!-- Toolbar Row -->
+            <div class="warehouse-toolbar">
+                <!-- Search Bar -->
+                <mat-form-field appearance="outline" class="warehouse-search-field">
+                    <input matInput [(ngModel)]="searchQuery" (ngModelChange)="applyFilters()"
+                        placeholder="Rechercher par nom, description, adresse..." class="warehouse-search-input" />
+                    <mat-icon matPrefix class="warehouse-search-icon">search</mat-icon>
+                    <button mat-icon-button matSuffix *ngIf="searchQuery" (click)="clearSearch()" aria-label="Effacer"
+                        matTooltip="Effacer la recherche" class="warehouse-clear-btn">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+
+            <!-- Filters Row -->
+            <div class="warehouse-filters-row">
+                <!-- Status Filter Chips -->
+                <div class="warehouse-filter-group">
+                    <span class="filter-label">Statut:</span>
+                    <mat-chip-listbox class="filter-chips" aria-label="Filtres de statut">
+                        <mat-chip-option *ngFor="let status of availableStatuses"
+                            [selected]="isStatusSelected(status.value)" (click)="toggleStatusFilter(status.value)"
+                            [style.--chip-color]="status.color">
+                            {{ status.label }}
+                        </mat-chip-option>
+                    </mat-chip-listbox>
+                </div>
+
+                <!-- Results Summary & Reset -->
+                <div class="warehouse-summary-actions">
+                    <span class="summary-text" *ngIf="hasActiveFilters()">
+                        {{ getActiveFiltersCount() }} filtre(s) actifs •
+                        <strong>{{ displayedWarehouses.length }}</strong> résultat(s)
+                    </span>
+                    <button mat-stroked-button *ngIf="hasActiveFilters()" (click)="resetFilters()"
+                        matTooltip="Réinitialiser tous les filtres" class="reset-filters-btn">
+                        <mat-icon>refresh</mat-icon>
+                        <span>Réinitialiser</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content - Compact Spacing -->
+    <div class="flex-auto overflow-y-auto p-2 md:p-4 warehouse-content flex flex-col min-h-0">
+
+        <!-- Skeleton Loader - 8 Cards -->
+        <div class="warehouse-skeleton-container" *ngIf="loading">
+            <div class="warehouse-grid">
+                <div class="warehouse-skeleton-card" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+                    <div class="skeleton-header">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-badge"></div>
+                    </div>
+                    <div class="skeleton-body">
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                    <div class="skeleton-footer">
+                        <div class="skeleton-button"></div>
+                        <div class="skeleton-button"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warehouses Grid -->
+        <ng-container *ngIf="!loading">
+            <div class="flex flex-col flex-1 min-h-0">
+                <div class="warehouse-grid-container flex flex-col flex-1 min-h-0"
+                    *ngIf="displayedWarehouses.length > 0; else emptyState">
+                    <div class="warehouse-grid flex-1">
+                        <ng-container *ngFor="let w of paginatedWarehouses(); trackBy: trackById; let i = index">
+                            <div class="warehouse-card stagger-item hover-lift">
+                                <!-- Card Header with Title and Badge -->
+                                <div class="warehouse-card-header">
+                                    <div class="warehouse-card-header-content">
+                                        <h3 class="warehouse-title" [title]="(w.name || 'Sans nom').trim()">
+                                            <span>{{ (w.name || 'Sans nom').trim() || 'Sans nom' }}</span>
+                                        </h3>
+                                        <span class="warehouse-status-badge"
+                                            [ngClass]="w.isActive ? 'status-active' : 'status-inactive'">
+                                            <span class="status-dot"
+                                                [style.background-color]="w.isActive ? '#10b981' : '#6b7280'"></span>
+                                            <span>{{ w.isActive ? 'Actif' : 'Inactif' }}</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Card Body - Description -->
+                                <div class="warehouse-card-body">
+                                    <p class="warehouse-description"
+                                        [title]="(w.description || 'Aucune description').trim()">
+                                        {{ (w.description || 'Aucune description').trim() || 'Aucune description' }}
+                                    </p>
+                                </div>
+
+                                <!-- Card Footer - Action Buttons -->
+                                <div class="warehouse-footer">
+                                    <div class="warehouse-footer-actions">
+                                        <!-- Edit Action -->
+                                        <button mat-mini-fab color="primary" (click)="onEdit(w)"
+                                            matTooltip="Modifier le magasin" class="action-fab">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+
+                                        <!-- Toggle Activation -->
+                                        <button mat-mini-fab [color]="w.isActive ? 'warn' : 'accent'"
+                                            (click)="toggleActivation(w)" [disabled]="actionLoading[w.id]"
+                                            [matTooltip]="w.isActive ? 'Désactiver le magasin' : 'Activer le magasin'"
+                                            class="action-fab">
+                                            <mat-spinner *ngIf="actionLoading[w.id]" diameter="20"
+                                                class="spinner-white">
+                                            </mat-spinner>
+                                            <mat-icon *ngIf="!actionLoading[w.id]">power_settings_new</mat-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="warehouse-paginator-wrapper mt-4">
+                        <mat-paginator [length]="displayedWarehouses.length" [pageSize]="pageSize"
+                            [pageSizeOptions]="pageSizeOptions" [pageIndex]="currentPage" (page)="onPageChange($event)"
+                            showFirstLastButtons class="warehouse-paginator">
+                        </mat-paginator>
+                    </div>
+                </div>
+            </div>
+            <ng-template #emptyState>
+                <div class="warehouse-empty-state">
+                    <mat-icon [svgIcon]="'heroicons_outline:inbox'" class="warehouse-empty-icon"></mat-icon>
+                    <h2 class="warehouse-empty-title">Aucun magasin trouvé</h2>
+                    <p class="warehouse-empty-description">Essayez d'ajuster la recherche ou créez un nouveau magasin
+                        pour commencer.</p>
+                    <button mat-flat-button color="primary" class="warehouse-empty-action" (click)="onCreate()">
+                        <mat-icon>add</mat-icon>
+                        <span>Créer un magasin</span>
+                    </button>
+                </div>
+            </ng-template>
+        </ng-container>
+
+    </div>
+</div>

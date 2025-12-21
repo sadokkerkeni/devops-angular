@@ -1,0 +1,358 @@
+/* ============================================
+   PREMIUM GLOBAL ENHANCEMENTS
+   Layout & Overall App Improvements
+   ============================================ */
+
+/* ============================================
+   1. GLOBAL BACKGROUND & GRADIENTS
+   ============================================ */
+
+body {
+  background: var(--bg-gradient-subtle);
+  min-height: 100vh;
+  position: relative;
+  
+  /* Subtle animated gradient overlay */
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: gradient-shift 20s ease infinite;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Main layout container */
+.layout {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   2. SIDEBAR & NAVIGATION ENHANCEMENTS
+   ============================================ */
+
+/* Sidebar premium styling */
+.mat-drawer {
+  background: var(--bg-gradient-card) !important;
+  border-right: 1px solid var(--border-light) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Navigation links */
+.mat-nav-list {
+  .mat-list-item {
+    border-radius: var(--radius-lg);
+    margin: var(--space-1) var(--space-3);
+    transition: all var(--transition-base);
+    
+    &:hover {
+      background: var(--bg-secondary) !important;
+      transform: translateX(4px);
+    }
+    
+    &.active {
+      background: var(--bg-gradient) !important;
+      color: var(--text-inverse) !important;
+      box-shadow: var(--shadow-md), var(--shadow-primary);
+      
+      mat-icon {
+        color: var(--text-inverse) !important;
+      }
+    }
+  }
+}
+
+/* ============================================
+   3. HEADER & TOOLBAR ENHANCEMENTS
+   ============================================ */
+
+/* Top toolbar */
+.mat-toolbar {
+  background: var(--bg-gradient-card) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  box-shadow: var(--shadow-sm) !important;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ============================================
+   4. CONTENT AREA ENHANCEMENTS
+   ============================================ */
+
+/* Main content wrapper */
+router-outlet + * {
+  background: transparent !important;
+  
+  > * {
+    background: transparent !important;
+  }
+}
+
+/* Page content padding */
+.page-content {
+  padding: var(--space-8);
+  min-height: calc(100vh - 64px);
+}
+
+/* ============================================
+   5. CARD GRID ENHANCEMENTS
+   ============================================ */
+
+.grid {
+  gap: var(--space-6);
+  
+  /* Staggered animation for cards */
+  > * {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+    
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.05}s;
+      }
+    }
+  }
+}
+
+/* ============================================
+   6. MATERIAL OVERRIDES - Premium Look
+   ============================================ */
+
+/* Buttons */
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-outlined-button {
+  border-radius: var(--radius-lg) !important;
+  font-family: var(--font-family-buttons) !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: 0.01em !important;
+  transition: all var(--transition-base) !important;
+  
+  &:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg) !important;
+  }
+}
+
+/* Primary buttons */
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-unelevated-button.mat-primary {
+  background: var(--bg-gradient) !important;
+  color: var(--text-inverse) !important;
+  box-shadow: var(--shadow-md), var(--shadow-primary) !important;
+  
+  &:hover:not(:disabled) {
+    box-shadow: var(--shadow-lg), var(--shadow-primary) !important;
+  }
+}
+
+/* Form fields */
+.mat-mdc-form-field {
+  .mat-mdc-text-field-wrapper {
+    border-radius: var(--radius-lg) !important;
+    transition: all var(--transition-base) !important;
+    
+    &:hover {
+      border-color: var(--border-medium) !important;
+    }
+  }
+  
+  &.mat-focused {
+    .mat-mdc-text-field-wrapper {
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+    }
+  }
+}
+
+/* Inputs */
+.mat-mdc-form-field-input-control {
+  font-family: var(--font-family-sans) !important;
+  font-size: var(--font-size-base) !important;
+}
+
+/* Icon buttons & fabs inherit typography */
+.mat-mdc-icon-button,
+.mat-mdc-fab,
+.mat-mdc-mini-fab,
+.mat-mdc-stroked-button,
+.mat-mdc-button-base,
+.mat-mdc-extended-fab {
+  font-family: var(--font-family-buttons) !important;
+  font-weight: 600 !important;
+}
+
+/* Generic functional buttons (custom classes) */
+button,
+[role="button"],
+.cta-button,
+.reset-btn,
+.pill,
+.status-pill,
+.switch-btn,
+.actions-group button,
+.article-footer-actions button,
+.role-pills .pill,
+.filters-panel button {
+  font-family: var(--font-family-buttons, 'Times New Roman', serif);
+  letter-spacing: 0.01em;
+}
+
+/* ============================================
+   7. NOTIFICATIONS & SNACKBARS
+   ============================================ */
+
+.mat-mdc-snack-bar-container {
+  border-radius: var(--radius-xl) !important;
+  box-shadow: var(--shadow-xl) !important;
+  backdrop-filter: blur(10px);
+  
+  &.success {
+    background: linear-gradient(135deg, var(--success-500), var(--success-600)) !important;
+    box-shadow: var(--shadow-lg), var(--shadow-success) !important;
+  }
+  
+  &.error {
+    background: linear-gradient(135deg, var(--error-500), var(--error-600)) !important;
+    box-shadow: var(--shadow-lg), var(--shadow-error) !important;
+  }
+}
+
+/* ============================================
+   8. SCROLLBAR STYLING - Application Wide
+   ============================================ */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-500) var(--gray-100);
+  
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--gray-100);
+    border-radius: var(--radius-full);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--bg-gradient);
+    border-radius: var(--radius-full);
+    transition: opacity var(--transition-base);
+    
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+/* ============================================
+   9. SELECTION COLORS
+   ============================================ */
+
+::selection {
+  background: var(--primary-500);
+  color: var(--text-inverse);
+}
+
+::-moz-selection {
+  background: var(--primary-500);
+  color: var(--text-inverse);
+}
+
+/* ============================================
+   10. FOCUS STATES
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================
+   11. LOADING STATES
+   ============================================ */
+
+.mat-mdc-progress-spinner {
+  circle {
+    stroke: var(--primary-500) !important;
+  }
+}
+
+/* ============================================
+   12. RESPONSIVE ENHANCEMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .premium-page-header {
+    padding: var(--space-6) var(--space-4) !important;
+  }
+  
+  .premium-card {
+    padding: var(--space-4) !important;
+  }
+  
+  .grid {
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: var(--font-size-sm);
+  }
+  
+  h1, h2, h3 {
+    font-size: calc(var(--font-size-base) * 1.2) !important;
+  }
+}
+
+/* ============================================
+   13. PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    background: white !important;
+    
+    &::before {
+      display: none;
+    }
+  }
+  
+  .premium-card {
+    box-shadow: none !important;
+    border: 1px solid var(--gray-300) !important;
+    break-inside: avoid;
+  }
+}
+
+/* ============================================
+   END OF PREMIUM GLOBAL ENHANCEMENTS
+   ============================================ */
+

@@ -1,0 +1,105 @@
+<!-- Compact Chatbot FAB - 48x48px -->
+<button *ngIf="isAuthenticated" mat-fab class="chatbot-fab" [class.fab-open]="isOpen" (click)="toggle()"
+    [@slideInBottom] [@slideOutBottom]>
+    <mat-icon *ngIf="!isOpen">chat</mat-icon>
+    <mat-icon *ngIf="isOpen">close</mat-icon>
+</button>
+
+<!-- Chatbot Window - Only show if authenticated -->
+<div *ngIf="isAuthenticated && isOpen" class="chatbot-panel" [@slideInUp] [@slideOutDown]>
+
+    <!-- Header -->
+    <div class="flex items-center justify-between p-2 border-b border-gray-200"
+        style="background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);">
+        <div class="flex items-center gap-2">
+            <div
+                class="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-md">
+                <mat-icon class="text-white" style="font-size: 16px; width: 16px; height: 16px;">smart_toy</mat-icon>
+            </div>
+            <div>
+                <h3 class="text-xs font-semibold"
+                    style="background: linear-gradient(135deg, #0284c7, #0369a1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    Assistant</h3>
+            </div>
+        </div>
+        <div class="flex items-center gap-1">
+            <button mat-icon-button (click)="clearConversation()" matTooltip="Effacer" class="modern-btn btn-icon"
+                style="width: 32px; height: 32px; min-width: 32px;">
+                <mat-icon style="font-size: 16px; width: 16px; height: 16px;">delete_outline</mat-icon>
+            </button>
+            <button mat-icon-button (click)="close()" matTooltip="Fermer" class="modern-btn btn-icon"
+                style="width: 32px; height: 32px; min-width: 32px; color: #ef4444;">
+                <mat-icon style="font-size: 18px; width: 18px; height: 18px;">close</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <!-- Messages Container -->
+    <div #messagesContainer class="flex-1 overflow-y-auto p-2 space-y-2 modern-scrollbar"
+        style="background: #fafafa; min-height: 0; max-height: 100%;">
+
+        <!-- Empty State -->
+        <div *ngIf="messages.length === 0" class="flex flex-col items-center justify-center h-full text-center px-2">
+            <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center mb-2">
+                <mat-icon class="text-2xl text-indigo-500">chat_bubble_outline</mat-icon>
+            </div>
+            <p class="text-sm font-semibold text-gray-900 mb-1">Bonjour ! 👋</p>
+            <p class="text-xs text-gray-600">Posez-moi une question !</p>
+        </div>
+
+        <!-- Messages -->
+        <ng-container *ngFor="let message of messages">
+            <div class="flex animate-fade-in-up" [class.justify-end]="message.role === 'user'"
+                [class.justify-start]="message.role === 'assistant'">
+                <div class="max-w-[85%] rounded-lg px-3 py-2 transition-all duration-200" [ngClass]="{
+                        'bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-md': message.role === 'user',
+                        'bg-white border border-gray-200 text-gray-900 shadow-sm': message.role === 'assistant'
+                    }" style="border-radius: 0.5rem;">
+                    <p class="text-xs whitespace-pre-wrap leading-relaxed">{{ message.content }}</p>
+                    <span class="text-[10px] mt-1 block opacity-70"
+                        [ngClass]="message.role === 'user' ? 'text-white' : 'text-gray-500'">
+                        {{ message.timestamp | date:'HH:mm' }}
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Loading Indicator -->
+        <div *ngIf="isLoading" class="flex justify-start">
+            <div class="bg-default rounded-lg px-4 py-2">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                    <div class="w-2 h-2 bg-primary rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                    <div class="w-2 h-2 bg-primary rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Suggestions -->
+    <div *ngIf="suggestions.length > 0" class="px-3 pb-1 border-t border-divider">
+        <div class="flex flex-wrap gap-1 mt-1">
+            <button *ngFor="let suggestion of suggestions" mat-stroked-button class="text-[10px] py-1 px-2"
+                (click)="sendSuggestion(suggestion)" style="min-width: auto; line-height: 1.2;">
+                {{ suggestion }}
+            </button>
+        </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="p-2 border-t border-gray-200" style="background: white; flex-shrink: 0;">
+        <div class="flex items-center gap-2">
+            <div class="flex-1 relative">
+                <input #messageInput type="text" placeholder="Message..." [(ngModel)]="currentMessage"
+                    (keydown)="onKeyDown($event)" [disabled]="isLoading"
+                    class="w-full px-2 py-1.5 text-xs border-2 border-gray-200 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
+                    style="border-radius: 0.5rem;">
+            </div>
+            <button mat-icon-button [disabled]="!currentMessage.trim() || isLoading" (click)="sendMessage()"
+                class="modern-btn btn-primary" style="width: 2rem; height: 2rem; min-width: 2rem;">
+                <mat-icon style="font-size: 16px; width: 16px; height: 16px;">send</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

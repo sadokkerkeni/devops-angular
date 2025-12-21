@@ -1,0 +1,53 @@
+@import '../../../styles/modern-ui-system.scss';
+
+.modern-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: all var(--transition-base);
+
+  &:focus-within {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+  }
+
+  .search-icon {
+    color: var(--color-gray-400);
+    margin-right: var(--spacing-sm);
+    flex-shrink: 0;
+  }
+
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.875rem;
+    color: var(--color-gray-900);
+    padding: 0;
+
+    &::placeholder {
+      color: var(--color-gray-400);
+    }
+  }
+
+  .clear-button {
+    margin-left: var(--spacing-sm);
+    color: var(--color-gray-400);
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+
+    &:hover {
+      color: var(--color-gray-600);
+      background: var(--color-gray-100);
+    }
+  }
+}
+

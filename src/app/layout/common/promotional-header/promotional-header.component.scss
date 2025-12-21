@@ -1,0 +1,81 @@
+@import '../../../styles/modern-ui-system.scss';
+
+/* Promotional Header Wrapper */
+.promotional-header-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 180px; /* Reduced from 280px for better screen usage */
+    max-height: 200px; /* Limit max height */
+    background: linear-gradient(135deg, #ec4899 0%, #f472b6 20%, #fb7185 40%, #f43f5e 60%, #e11d48 80%, #be185d 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
+    flex-shrink: 0; /* Don't shrink */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Step Badge */
+.step-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid;
+    transition: all 0.3s ease;
+}
+
+.step-badge-rose {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.3) 0%, rgba(225, 29, 72, 0.3) 100%);
+    border-color: rgba(236, 72, 153, 0.5);
+    color: white;
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.3);
+}
+
+/* Feature Icons */
+.feature-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-icon-rose {
+    &:hover {
+        transform: translateY(-8px) scale(1.1);
+        border-color: rgba(236, 72, 153, 0.8) !important;
+        box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .promotional-header-wrapper {
+        min-height: 140px; /* Reduced from 240px */
+        max-height: 160px;
+    }
+}
+

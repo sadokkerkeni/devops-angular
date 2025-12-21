@@ -1,0 +1,453 @@
+/* ============================================
+   SHARED DESIGN SYSTEM
+   Unified UI patterns matching Magasin page
+   ============================================ */
+
+/* Design Tokens */
+$color-primary: #1d4ed8;
+$color-primary-light: #e0ecff;
+$color-success: #047857;
+$color-success-bg: #ecfdf5;
+$color-danger: #b91c1c;
+$color-danger-bg: #fbeaea;
+$color-gray-50: #f9fafb;
+$color-gray-100: #f3f4f6;
+$color-gray-200: #e5e7eb;
+$color-gray-300: #d1d5db;
+$color-gray-400: #9ca3af;
+$color-gray-500: #6b7280;
+$color-gray-600: #4b5563;
+$color-gray-700: #374151;
+$color-gray-800: #1f2937;
+$color-gray-900: #111827;
+
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-2xl: 18px;
+$radius-full: 999px;
+
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 8px 24px rgba(0, 0, 0, 0.04);
+$shadow-lg: 0 18px 35px rgba(15, 23, 42, 0.08);
+$shadow-xl: 0 22px 40px rgba(15, 23, 42, 0.12);
+
+/* ============================================
+   PAGE SHELL - Full height layout
+   ============================================ */
+.page-shell {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: 100%;
+    background: $color-gray-50;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* ============================================
+   PAGE HEADER - Sticky header with filters
+   ============================================ */
+.page-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid $color-gray-200;
+    background: #fff;
+    box-shadow: $shadow-md;
+
+    .header-content {
+        padding: 14px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .title-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .title-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: $color-gray-900;
+            line-height: 1.2;
+        }
+    }
+}
+
+/* ============================================
+   COUNT BADGE - Item counter chip
+   ============================================ */
+.count-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: $radius-full;
+    font-size: 12px;
+    font-weight: 500;
+    background: $color-primary-light;
+    color: $color-primary;
+}
+
+/* ============================================
+   FILTER TOOLBAR - Search and filters
+   ============================================ */
+.filter-toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    padding: 12px 16px;
+    border-radius: $radius-xl;
+    border: 1px solid $color-gray-200;
+    background: linear-gradient(135deg, rgba(249,250,251,0.8), rgba(243,244,246,0.9));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    flex-wrap: wrap;
+
+    &__search {
+        flex: 1 1 280px;
+        min-width: 220px;
+
+        .mat-mdc-text-field-wrapper {
+            border-radius: $radius-full;
+            background: #fff;
+        }
+
+        input {
+            font-size: 14px;
+        }
+
+        .search-icon {
+            color: $color-gray-400;
+        }
+    }
+
+    &__segments {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* ============================================
+   SEGMENTED TOGGLE - Actifs/Inactifs/Tous
+   ============================================ */
+.status-toggle__btn {
+    border: 1px solid #d0d7e2;
+    border-radius: $radius-xl;
+    padding: 10px 18px;
+    min-width: 120px;
+    background: #f8fafc;
+    color: $color-gray-900;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+    cursor: pointer;
+
+    &:hover {
+        border-color: $color-gray-400;
+        background: #fff;
+    }
+
+    &:focus-visible {
+        outline: 2px solid #2563eb;
+        outline-offset: 3px;
+    }
+
+    &--active {
+        background: $color-gray-800;
+        color: #fff;
+        border-color: $color-gray-900;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+    }
+
+    .status-toggle__hint {
+        font-size: 11px;
+        font-weight: 500;
+        color: currentColor;
+        opacity: 0.8;
+    }
+}
+
+/* ============================================
+   STATUS BADGE - Active/Inactive pills
+   ============================================ */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: $radius-full;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+
+    &__dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: currentColor;
+    }
+
+    &--active {
+        background: $color-success-bg;
+        color: $color-success;
+    }
+
+    &--inactive {
+        background: $color-danger-bg;
+        color: $color-danger;
+    }
+}
+
+/* Alternative class names for compatibility */
+.status-active {
+    @extend .status-badge--active;
+}
+
+.status-inactive {
+    @extend .status-badge--inactive;
+}
+
+/* ============================================
+   CARD STYLES - Modern cards
+   ============================================ */
+.modern-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: #fff;
+    border-radius: $radius-2xl;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    min-height: 230px;
+    box-shadow: $shadow-lg;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-xl;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    &__meta {
+        margin: 0;
+        font-size: 11px;
+        color: $color-gray-400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin: 4px 0 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: $color-gray-900;
+        line-height: 1.3;
+    }
+
+    &__description {
+        margin: 0;
+        color: $color-gray-600;
+        line-height: 1.45;
+        font-size: 14px;
+    }
+
+    &__actions {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+/* ============================================
+   TABLE STYLES - Modern tables
+   ============================================ */
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+        text-align: left;
+        font-weight: 600;
+        font-size: 12px;
+        color: $color-gray-500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 12px 16px;
+        background: $color-gray-50;
+        border-bottom: 1px solid $color-gray-200;
+    }
+
+    td {
+        font-size: 14px;
+        color: $color-gray-900;
+        padding: 12px 16px;
+        border-bottom: 1px solid $color-gray-100;
+    }
+
+    tr:hover td {
+        background: $color-gray-50;
+    }
+
+    .actions-cell {
+        text-align: right;
+        white-space: nowrap;
+    }
+}
+
+/* ============================================
+   EMPTY STATE - No data placeholders
+   ============================================ */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    text-align: center;
+
+    mat-icon, .empty-icon {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+        color: $color-gray-300;
+        margin-bottom: 16px;
+    }
+
+    h3, .empty-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: $color-gray-900;
+        margin: 0 0 8px;
+    }
+
+    p, .empty-description {
+        font-size: 14px;
+        color: $color-gray-500;
+        max-width: 320px;
+        margin: 0 0 24px;
+    }
+}
+
+/* ============================================
+   BUTTON STYLES - CTA and action buttons
+   ============================================ */
+.cta-btn {
+    border-radius: $radius-lg !important;
+    padding: 8px 16px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25) !important;
+    transition: all 0.2s ease !important;
+
+    &:hover {
+        box-shadow: 0 6px 20px rgba(29, 78, 216, 0.35) !important;
+        transform: translateY(-1px);
+    }
+}
+
+.reset-btn {
+    height: 44px;
+    border-color: #cbd5f5;
+    border-radius: $radius-lg;
+    font-weight: 600;
+    color: $color-primary;
+}
+
+/* ============================================
+   CONTENT AREA - Scrollable content
+   ============================================ */
+.content-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    min-height: 0;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+}
+
+/* ============================================
+   FORM FIELD STYLES
+   ============================================ */
+.search-field {
+    .mat-mdc-form-field-infix {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .mat-mdc-text-field-wrapper {
+        border-radius: $radius-full;
+        background: #fff;
+    }
+
+    input {
+        font-size: 14px;
+    }
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+
+    .loading-text {
+        margin-top: 16px;
+        color: $color-gray-500;
+        font-size: 14px;
+    }
+}
+
+/* ============================================
+   SKELETON LOADERS
+   ============================================ */
+.skeleton-card {
+    background: #fff;
+    border-radius: $radius-xl;
+    border: 1px solid $color-gray-100;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

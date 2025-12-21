@@ -1,0 +1,309 @@
+<div class="article-module page-shell">
+  <header class="page-header">
+    <div class="page-header__content">
+      <div class="page-header__left">
+        <div class="page-title-group">
+          <p class="page-subtitle">Catalogue</p>
+          <h1 class="page-title">Articles & stocks</h1>
+        </div>
+        <span class="count-pill">{{ getArticleCountLabel() }}</span>
+      </div>
+      <div class="header-actions">
+        <div class="view-switch" role="group" aria-label="Changer la vue">
+          <button
+            type="button"
+            class="switch-btn"
+            [class.switch-btn--active]="viewMode === 'table'"
+            (click)="onViewModeChange('table')"
+            [attr.aria-pressed]="viewMode === 'table'">
+            <mat-icon>view_list</mat-icon>
+            <span>Tableau</span>
+          </button>
+          <button
+            type="button"
+            class="switch-btn"
+            [class.switch-btn--active]="viewMode === 'grid'"
+            (click)="onViewModeChange('grid')"
+            [attr.aria-pressed]="viewMode === 'grid'">
+            <mat-icon>grid_view</mat-icon>
+            <span>Grille</span>
+          </button>
+        </div>
+        <button
+          mat-flat-button
+          color="primary"
+          class="cta-button"
+          (click)="onCreate()"
+          aria-label="Créer un article">
+          <mat-icon>add</mat-icon>
+          Nouvel article
+        </button>
+      </div>
+    </div>
+
+    <div class="filters-panel">
+      <mat-form-field appearance="outline" class="search-field fuse-mat-dense" subscriptSizing="dynamic">
+        <mat-icon matPrefix class="search-icon">search</mat-icon>
+        <input
+          matInput
+          [(ngModel)]="searchQuery"
+          (ngModelChange)="applyFilters()"
+          placeholder="Rechercher par code, désignation ou ID"
+          aria-label="Rechercher un article" />
+        <button
+          mat-icon-button
+          matSuffix
+          *ngIf="searchQuery"
+          (click)="clearSearch()"
+          aria-label="Effacer la recherche"
+          matTooltip="Effacer la recherche">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="status-pills" role="group" aria-label="Filtrer par statut">
+        <button
+          *ngFor="let status of availableStatuses"
+          type="button"
+          class="status-pill"
+          [class.status-pill--active]="isStatusSelected(status.value)"
+          (click)="toggleStatusFilter(status.value)"
+          [attr.aria-pressed]="isStatusSelected(status.value)">
+          <span class="status-pill__label">{{ status.label }}</span>
+          <span class="status-pill__hint">{{ status.description }}</span>
+        </button>
+      </div>
+
+      <div class="filters-meta">
+        <span class="summary-text" *ngIf="hasActiveFilters()">
+          {{ getActiveFiltersCount() }} filtre(s) actifs • <strong>{{ displayedArticles.length }}</strong> résultat(s)
+        </span>
+        <button
+          mat-stroked-button
+          color="primary"
+          class="reset-btn"
+          *ngIf="hasActiveFilters()"
+          (click)="resetFilters()"
+          aria-label="Réinitialiser les filtres">
+          <mat-icon>refresh</mat-icon>
+          Réinitialiser
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-content">
+    <div class="article-skeleton" *ngIf="loading && viewMode === 'grid'">
+      <div class="article-grid">
+        <div class="article-skeleton-card" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+          <div class="skeleton-header">
+            <div class="skeleton-title"></div>
+            <div class="skeleton-badge"></div>
+          </div>
+          <div class="skeleton-body">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line short"></div>
+          </div>
+          <div class="skeleton-footer">
+            <div class="skeleton-button"></div>
+            <div class="skeleton-button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-loading" *ngIf="loading && viewMode === 'table'">
+      <mat-spinner diameter="48"></mat-spinner>
+      <p class="loading-text">Chargement des articles...</p>
+    </div>
+
+    <ng-container *ngIf="!loading">
+      <mat-card class="articles-table-card" *ngIf="viewMode === 'table' && displayedArticles.length > 0">
+        <mat-card-header class="articles-table-header">
+          <div>
+            <p class="table-eyebrow">Inventaire</p>
+            <h2 class="table-title">Vue tableau</h2>
+          </div>
+        </mat-card-header>
+        <mat-card-content class="articles-table-content">
+          <div class="table-wrapper">
+            <table mat-table [dataSource]="paginatedArticles()" class="articles-table" aria-label="Table des articles">
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef (click)="onSortChange('id')" class="table-header sortable">
+                  <div class="table-header__content">
+                    <span>ID</span>
+                    <mat-icon class="sort-icon">{{ getSortIcon('id') }}</mat-icon>
+                  </div>
+                </th>
+                <td mat-cell *matCellDef="let element" class="table-cell">{{ element.id }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="codeProduit">
+                <th mat-header-cell *matHeaderCellDef (click)="onSortChange('codeProduit')" class="table-header sortable">
+                  <div class="table-header__content">
+                    <span>Code produit</span>
+                    <mat-icon class="sort-icon">{{ getSortIcon('codeProduit') }}</mat-icon>
+                  </div>
+                </th>
+                <td mat-cell *matCellDef="let element" class="table-cell">
+                  <div class="article-id">
+                    <span class="article-code">{{ element.codeProduit }}</span>
+                    <span class="article-design">{{ element.designation }}</span>
+                  </div>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="designation">
+                <th mat-header-cell *matHeaderCellDef (click)="onSortChange('designation')" class="table-header sortable">
+                  <div class="table-header__content">
+                    <span>Désignation</span>
+                    <mat-icon class="sort-icon">{{ getSortIcon('designation') }}</mat-icon>
+                  </div>
+                </th>
+                <td mat-cell *matCellDef="let element" class="table-cell">{{ element.designation }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="dateAjout">
+                <th mat-header-cell *matHeaderCellDef (click)="onSortChange('dateAjout')" class="table-header sortable">
+                  <div class="table-header__content">
+                    <span>Date d'ajout</span>
+                    <mat-icon class="sort-icon">{{ getSortIcon('dateAjout') }}</mat-icon>
+                  </div>
+                </th>
+                <td mat-cell *matCellDef="let element" class="table-cell">
+                  <div class="date-pill">
+                    <mat-icon>event</mat-icon>
+                    <span>{{ element.dateAjout | date:'short' }}</span>
+                  </div>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="isActive">
+                <th mat-header-cell *matHeaderCellDef (click)="onSortChange('isActive')" class="table-header sortable">
+                  <div class="table-header__content">
+                    <span>Statut</span>
+                    <mat-icon class="sort-icon">{{ getSortIcon('isActive') }}</mat-icon>
+                  </div>
+                </th>
+                <td mat-cell *matCellDef="let element" class="table-cell">
+                  <span class="status-badge" [ngClass]="element.isActive ? 'status-badge--active' : 'status-badge--inactive'">
+                    <span class="status-dot"></span>
+                    {{ element.isActive ? 'Actif' : 'Inactif' }}
+                  </span>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef class="table-header actions-header">Actions</th>
+                <td mat-cell *matCellDef="let element" class="table-cell actions-cell">
+                  <div class="actions-group">
+                    <button mat-icon-button matTooltip="Voir détails" (click)="onView(element)">
+                      <mat-icon>visibility</mat-icon>
+                    </button>
+                    <button mat-icon-button matTooltip="Modifier l'article" (click)="onEdit(element)">
+                      <mat-icon>edit</mat-icon>
+                    </button>
+                    <button
+                      mat-icon-button
+                      [matTooltip]="element.isActive ? 'Désactiver' : 'Activer'"
+                      (click)="onToggleActive(element.id, element.isActive)"
+                      [disabled]="actionLoading[element.id]">
+                      <mat-spinner *ngIf="actionLoading[element.id]" diameter="20" class="spinner-white"></mat-spinner>
+                      <mat-icon *ngIf="!actionLoading[element.id]">
+                        {{ element.isActive ? 'toggle_off' : 'toggle_on' }}
+                      </mat-icon>
+                    </button>
+                  </div>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"></tr>
+            </table>
+          </div>
+          <div class="paginator-wrapper">
+            <app-pagination
+              [length]="displayedArticles.length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              [pageIndex]="currentPage"
+              (page)="onPageChange($event)">
+            </app-pagination>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <div class="articles-grid-card" *ngIf="viewMode === 'grid' && displayedArticles.length > 0">
+        <div class="articles-grid">
+          <div class="article-card" *ngFor="let article of paginatedArticles(); trackBy: trackById">
+            <div class="article-card__header">
+              <div>
+                <p class="article-card__meta">ID #{{ article.id || '—' }}</p>
+                <h3 class="article-card__title">{{ article.codeProduit }}</h3>
+              </div>
+              <span class="status-badge" [ngClass]="article.isActive ? 'status-badge--active' : 'status-badge--inactive'">
+                <span class="status-dot"></span>
+                {{ article.isActive ? 'Actif' : 'Inactif' }}
+              </span>
+            </div>
+            <div class="article-card__body">
+              <div *ngIf="article.photoUrl; else placeholder" class="article-photo-container">
+                <img [src]="'http://localhost:5288' + article.photoUrl" [alt]="article.designation" class="article-photo">
+              </div>
+              <ng-template #placeholder>
+                <div class="article-photo-placeholder">
+                  <mat-icon>image</mat-icon>
+                </div>
+              </ng-template>
+              <p class="article-designation">{{ article.designation || 'Sans désignation' }}</p>
+              <div class="article-date">
+                <mat-icon>calendar_today</mat-icon>
+                <span>{{ article.dateAjout | date:'short' }}</span>
+              </div>
+            </div>
+            <div class="article-card__footer">
+              <div class="article-footer-actions">
+                <button mat-mini-fab color="primary" (click)="onView(article)" matTooltip="Voir détails">
+                  <mat-icon>visibility</mat-icon>
+                </button>
+                <button mat-mini-fab color="accent" (click)="onEdit(article)" matTooltip="Modifier l'article">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button
+                  mat-mini-fab
+                  [color]="article.isActive ? 'warn' : 'primary'"
+                  (click)="onToggleActive(article.id, article.isActive)"
+                  [disabled]="actionLoading[article.id]"
+                  [matTooltip]="article.isActive ? 'Désactiver' : 'Activer'">
+                  <mat-spinner *ngIf="actionLoading[article.id]" diameter="20" class="spinner-white"></mat-spinner>
+                  <mat-icon *ngIf="!actionLoading[article.id]">power_settings_new</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="paginator-wrapper">
+          <app-pagination
+            [length]="displayedArticles.length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            [pageIndex]="currentPage"
+            (page)="onPageChange($event)">
+          </app-pagination>
+        </div>
+      </div>
+
+      <div class="article-empty-state" *ngIf="displayedArticles.length === 0">
+        <mat-icon [svgIcon]="'heroicons_outline:inbox'" class="empty-icon"></mat-icon>
+        <h2 class="empty-title">Aucun article trouvé</h2>
+        <p class="empty-description">
+          {{ hasActiveFilters() ? 'Ajustez vos filtres ou' : 'Commencez par' }} créer un nouvel article.
+        </p>
+        <button mat-flat-button color="primary" class="empty-action" (click)="onCreate()">
+          <mat-icon>add</mat-icon>
+          Créer un article
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

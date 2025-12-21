@@ -1,0 +1,140 @@
+<div class="page-shell messaging-page">
+  <!-- Header - Modern messaging style -->
+  <header class="messaging-header">
+    <div class="header-content">
+      <div class="title-row">
+        <div class="title-left">
+          <mat-icon class="header-icon">forum</mat-icon>
+          <h1 class="text-2xl font-bold tracking-tight text-gray-900 m-0">Messagerie</h1>
+          <span class="count-badge" *ngIf="conversations?.length">{{ conversations.length }} conversation{{ conversations.length > 1 ? 's' : '' }}</span>
+        </div>
+        <div class="header-actions">
+          <mat-form-field appearance="outline" class="user-select-field" subscriptSizing="dynamic">
+            <mat-icon matPrefix>person_add</mat-icon>
+            <mat-select [(ngModel)]="selectedUserId" placeholder="Sélectionner un utilisateur">
+              <mat-option *ngFor="let user of availableUsers" [value]="user.id">
+                {{ user.firstName }} {{ user.lastName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-flat-button color="primary" (click)="startConversation()" [disabled]="!selectedUserId || loading" class="cta-btn">
+            <mat-icon>add</mat-icon>
+            <span>Nouvelle conversation</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="messaging-content">
+    <!-- Liste des conversations (sidebar gauche) -->
+    <mat-card class="page-card conversations-card">
+      <div class="page-card-header">
+        <mat-icon>forum</mat-icon>
+        <h2 class="page-card-title">Conversations</h2>
+      </div>
+      <div class="page-card-content conversations-list">
+        <mat-spinner *ngIf="loading" diameter="40" class="mx-auto mt-4"></mat-spinner>
+        <div *ngIf="!loading" class="conversations-items">
+          <div *ngFor="let conversation of conversations" (click)="selectConversation(conversation)"
+               [class.selected]="selectedConversation?.id === conversation.id"
+               class="conversation-item">
+            <div class="conversation-main">
+              <div class="conversation-top">
+                <span class="conversation-name">{{ getOtherUserName(conversation) }}</span>
+                <mat-chip *ngIf="conversation.unreadCount > 0" color="primary" class="!text-xs !h-5 !min-h-5">
+                  {{ conversation.unreadCount }}
+                </mat-chip>
+              </div>
+              <div class="conversation-snippet">
+                <span *ngIf="conversation.lastMessage">{{ conversation.lastMessage.content }}</span>
+                <span *ngIf="!conversation.lastMessage" class="empty-snippet">Aucun message</span>
+              </div>
+              <div class="conversation-date">
+                {{ conversation.lastMessage ? formatDate(conversation.lastMessage.sentAt) : formatDate(conversation.updatedAt) }}
+              </div>
+            </div>
+          </div>
+          <div *ngIf="conversations.length === 0" class="page-empty-state">
+            <mat-icon class="empty-icon">chat_bubble_outline</mat-icon>
+            <h3>Aucune conversation</h3>
+            <p>Sélectionnez un utilisateur ci-dessus pour démarrer une nouvelle conversation</p>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- Zone de messages (contenu principal) -->
+    <mat-card class="page-card chat-card" *ngIf="selectedConversation">
+      <div class="page-card-header">
+        <mat-icon>sms</mat-icon>
+        <div class="chat-header-text">
+          <h2 class="page-card-title">{{ getOtherUserName(selectedConversation) }}</h2>
+          <p class="chat-subtitle">
+            {{ selectedConversation.user1Id === currentUserId ? selectedConversation.user2Email : selectedConversation.user1Email }}
+          </p>
+        </div>
+      </div>
+
+      <div id="messages-container" class="chat-messages">
+        <mat-spinner *ngIf="loadingMessages" diameter="40" class="mx-auto mt-4"></mat-spinner>
+        <div *ngIf="!loadingMessages" class="chat-messages-list">
+          <div *ngFor="let message of messages; trackBy: trackByMessageId"
+               [class.outgoing]="isMyMessage(message)"
+               [class.incoming]="!isMyMessage(message)"
+               [style.background]="!isMyMessage(message) ? getUserColor(message.senderId) + '15' : ''"
+               [style.border-left]="!isMyMessage(message) ? '4px solid ' + getUserColor(message.senderId) : ''"
+               [attr.data-user-color]="getUserColor(message.senderId)"
+               class="chat-bubble">
+            <div class="bubble-sender" 
+                 *ngIf="!isMyMessage(message)"
+                 [style.color]="getUserColor(message.senderId)">
+              {{ message.senderName }}
+            </div>
+            <div class="bubble-content">{{ message.content }}</div>
+            <div class="bubble-meta">
+              <span>{{ formatDate(message.sentAt) }}</span>
+              <span *ngIf="isMyMessage(message) && message.isRead" class="read-flag">✓✓</span>
+            </div>
+          </div>
+          <div *ngIf="messages.length === 0" class="page-empty-state chat-empty">
+            <mat-icon class="empty-icon">send</mat-icon>
+            <h3>Démarrez la conversation</h3>
+            <p>Envoyez votre premier message à {{ getOtherUserName(selectedConversation) }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-card-actions chat-input">
+        <form (ngSubmit)="sendMessage()" class="chat-input-form">
+          <mat-form-field appearance="outline" class="page-form-field chat-textarea">
+            <mat-icon matPrefix>edit</mat-icon>
+            <textarea matInput [(ngModel)]="newMessageContent" name="messageContent"
+                      placeholder="Tapez votre message ici..."
+                      rows="1" cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="4"
+                      (keydown.enter)="onEnterKey($event)"></textarea>
+          </mat-form-field>
+          <button mat-flat-button color="primary" type="submit" [disabled]="!newMessageContent.trim()">
+            <mat-icon>send</mat-icon>
+            <span>Envoyer</span>
+          </button>
+        </form>
+      </div>
+    </mat-card>
+
+    <!-- Message si aucune conversation sélectionnée -->
+    <mat-card class="page-card chat-card no-conversation" *ngIf="!selectedConversation">
+      <div class="page-card-content page-empty-state large-empty">
+        <div class="empty-illustration">
+          <mat-icon class="empty-icon-large">mark_chat_unread</mat-icon>
+        </div>
+        <h3>Sélectionnez une conversation</h3>
+        <p>Choisissez une conversation existante ou démarrez-en une nouvelle avec un collègue</p>
+        <div class="empty-hint" *ngIf="availableUsers?.length">
+          <mat-icon>lightbulb</mat-icon>
+          <span>{{ availableUsers.length }} utilisateur{{ availableUsers.length > 1 ? 's' : '' }} disponible{{ availableUsers.length > 1 ? 's' : '' }}</span>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

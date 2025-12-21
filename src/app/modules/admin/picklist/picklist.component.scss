@@ -1,0 +1,296 @@
+// Picklist Component Styles
+
+// Success Snackbar
+::ng-deep .success-snackbar {
+  .mdc-snackbar__surface {
+    background-color: #10b981 !important;
+  }
+
+  .mat-mdc-snack-bar-label {
+    color: white !important;
+  }
+}
+
+// Error Snackbar
+::ng-deep .error-snackbar {
+  .mdc-snackbar__surface {
+    background-color: #ef4444 !important;
+  }
+
+  .mat-mdc-snack-bar-label {
+    color: white !important;
+  }
+
+  .mat-mdc-button {
+    color: white !important;
+  }
+}
+
+// Loading spinner in button
+::ng-deep .mat-mdc-icon-button {
+  mat-spinner {
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
+
+// White spinner for FAB buttons
+::ng-deep .spinner-white circle {
+  stroke: white !important;
+}
+
+// Action FAB styling
+.action-fab {
+  width: 32px !important;
+  height: 32px !important;
+
+  ::ng-deep .mat-mdc-button-persistent-ripple {
+    border-radius: 50%;
+  }
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+}
+
+// Status dot
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+// Animate pulse for skeleton
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+// Smooth transitions for table rows
+::ng-deep .mat-mdc-row {
+  transition: background-color 0.2s ease-in-out;
+}
+
+// Chip transitions
+::ng-deep mat-chip {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Status badge animations
+::ng-deep .mat-mdc-cell {
+  .inline-flex {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+
+.dark {
+
+  // Header background
+  .sticky.top-0 {
+    background-color: rgb(30, 41, 59) !important; // slate-800
+    border-bottom-color: rgb(51, 65, 85) !important; // slate-700
+  }
+
+  // Table header
+  .bg-gray-50 {
+    background-color: rgb(51, 65, 85) !important;
+  }
+
+  // Table hover
+  ::ng-deep .mat-mdc-row:hover {
+    background-color: rgba(71, 85, 105, 0.5) !important; // slate-600 with opacity
+  }
+
+  // Empty state
+  .empty-state-icon {
+    background-color: rgb(51, 65, 85) !important;
+  }
+}
+
+/* ============================================
+   IMPROVED SPACING & LAYOUT
+   ============================================ */
+
+// Better table cell padding - optimized for space
+::ng-deep .mat-mdc-table {
+
+  .mat-mdc-header-cell,
+  .mat-mdc-cell {
+    padding: 8px 12px !important;
+
+    @media (max-width: 768px) {
+      padding: 6px 8px !important;
+    }
+  }
+
+  // Ensure text visibility
+  .mat-mdc-cell {
+    color: rgb(17, 24, 39) !important; // gray-900
+
+    // Dark mode support
+    .dark & {
+      color: rgb(243, 244, 246) !important; // gray-100
+    }
+  }
+
+  .mat-mdc-header-cell {
+    color: rgb(17, 24, 39) !important; // gray-900
+    font-weight: 600 !important;
+
+    // Dark mode support
+    .dark & {
+      color: rgb(243, 244, 246) !important; // gray-100
+    }
+  }
+}
+
+// Responsive improvements
+@media (max-width: 640px) {
+  .action-fab {
+    width: 28px !important;
+    height: 28px !important;
+
+    mat-icon {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+/* ============================================
+   COMPACT HEADER OPTIMIZATION
+   ============================================ */
+
+// Compact form fields in header
+::ng-deep .sticky.top-0 {
+  mat-form-field {
+    &.mat-mdc-form-field {
+      .mat-mdc-text-field-wrapper {
+        padding-bottom: 0 !important;
+      }
+
+      .mat-mdc-form-field-subscript-wrapper {
+        display: none !important;
+      }
+
+      .mat-mdc-form-field-infix {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        min-height: 40px !important;
+      }
+    }
+  }
+
+  // Compact chips
+  mat-chip-set {
+    mat-chip-option {
+      font-size: 11px !important;
+      min-height: 28px !important;
+      padding: 4px 8px !important;
+    }
+  }
+}
+
+/* ============================================
+   FULL SCREEN OPTIMIZATION
+   ============================================ */
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+// Ensure the component uses full height
+.absolute.inset-0 {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+// Optimize header spacing
+.sticky.top-0 {
+  flex-shrink: 0;
+}
+
+// Optimize main content area
+.flex-auto.overflow-y-auto {
+  min-height: 0; // Allow flex to shrink below content size
+  flex: 1 1 auto;
+}
+
+// Ensure table wrapper uses available space
+.w-full.h-full {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 100%;
+}
+
+// Better text contrast for status badges
+::ng-deep {
+
+  .bg-orange-100.text-orange-900,
+  .bg-red-100.text-red-900,
+  .bg-green-100.text-green-900,
+  .bg-gray-100.text-gray-900 {
+    color: inherit !important;
+  }
+}

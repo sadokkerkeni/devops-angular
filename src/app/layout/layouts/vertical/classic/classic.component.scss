@@ -1,0 +1,109 @@
+@use 'sass:color';
+
+.datta-navbar {
+  width: 264px;
+  background: #3f4d67;
+  color: #a9b7d0;
+
+  &.mat-drawer-closed {
+    width: 80px;
+  }
+
+  .fuse-vertical-navigation-item-active {
+    background: rgba(4, 169, 245, 0.12);
+    color: #fff;
+
+    mat-icon {
+      color: #04a9f5;
+    }
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 20px;
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+      color: #fff;
+    }
+
+    .brand-title {
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+}
+
+.datta-shell {
+  display: grid;
+  grid-template-rows: 70px 1fr 56px;
+  min-height: 100vh;
+  background: var(--datta-bg);
+}
+
+.datta-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  height: 70px;
+  padding: 0 24px;
+  background: #fff;
+  box-shadow: 0 1px 0 var(--datta-border);
+  gap: 16px;
+}
+
+.header-title {
+  h2 {
+    margin: 0;
+    color: var(--datta-title);
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  p {
+    margin: 2px 0 0;
+    color: #748892;
+    font-size: 13px;
+  }
+}
+
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.datta-content {
+  padding: 24px;
+
+  .page-wrapper {
+    background: var(--datta-bg);
+    min-height: calc(100vh - 126px);
+  }
+}
+
+.datta-footer {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  background: #fff;
+  border-top: 1px solid var(--datta-border);
+  color: #748892;
+}
+
+.mat-mdc-card,
+.card {
+  border-radius: var(--datta-radius);
+  box-shadow: var(--datta-shadow);
+  border: 1px solid var(--datta-border);
+  background: var(--datta-card);
+}
+

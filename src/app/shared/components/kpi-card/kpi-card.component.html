@@ -1,0 +1,35 @@
+<mat-card class="kpi-card" [ngClass]="[colorClass, isClickable ? 'kpi-clickable' : '']"
+  [attr.role]="isClickable ? 'button' : null" [attr.tabindex]="isClickable ? 0 : null"
+  [attr.aria-label]="isClickable ? ariaLabel : null" (click)="onClick()">
+  <!-- Loading State -->
+  <div *ngIf="data.loading" class="kpi-loading">
+    <div class="skeleton skeleton-icon"></div>
+    <div class="skeleton skeleton-text"></div>
+    <div class="skeleton skeleton-value"></div>
+  </div>
+
+  <!-- Content -->
+  <div *ngIf="!data.loading" class="kpi-content">
+    <!-- Icon -->
+    <div class="kpi-icon-wrapper">
+      <mat-icon class="kpi-icon">{{ data.icon }}</mat-icon>
+    </div>
+
+    <!-- Data -->
+    <div class="kpi-data">
+      <h3 class="kpi-title">{{ data.title }}</h3>
+      <div class="kpi-value">{{ data.value }}</div>
+
+      <!-- Variation -->
+      <div *ngIf="data.variation !== undefined" class="kpi-variation" [ngClass]="variationClass">
+        <mat-icon class="variation-icon">{{ variationIcon }}</mat-icon>
+        <span class="variation-value">
+          {{ data.variation > 0 ? '+' : '' }}{{ data.variation }}%
+        </span>
+        <span *ngIf="data.variationLabel" class="variation-label">
+          {{ data.variationLabel }}
+        </span>
+      </div>
+    </div>
+  </div>
+</mat-card>

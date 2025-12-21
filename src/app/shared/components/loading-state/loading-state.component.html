@@ -1,0 +1,13 @@
+<div 
+  class="modern-loading"
+  [class.loading-fullscreen]="fullScreen">
+  <div class="loading-content">
+    <mat-progress-spinner
+      [diameter]="spinnerDiameter"
+      mode="indeterminate"
+      class="loading-spinner">
+    </mat-progress-spinner>
+    <p class="loading-text" *ngIf="message">{{ message }}</p>
+  </div>
+</div>
+

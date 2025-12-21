@@ -1,0 +1,80 @@
+layout {
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    /* Base styles for individual layouts (exclude chatbot to keep it floating) */
+    > *:not(chatbot) {
+        position: relative;
+        display: flex;
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    /* Base styles for components that load as a route */
+    router-outlet {
+
+        + * {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            align-items: stretch;
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
+    }
+
+    /* Keep chatbot outside flex sizing so it stays a floating button */
+    > chatbot {
+        position: fixed;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        width: 0;
+        height: 0;
+        display: block;
+        flex: none;
+        pointer-events: none;
+    }
+}
+
+/* Fix for content area visibility - ensure FULL SCREEN WIDTH usage */
+classy-layout {
+    .flex.flex-col.flex-auto {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important; /* Remove max-width constraint for full width */
+    }
+    
+    /* Ensure content wrapper uses full width */
+    router-outlet + * {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important; /* Remove max-width constraint for full width */
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Remove all max-width constraints from page content */
+    router-outlet + * * {
+        &[class*="max-w-360"],
+        &[class*="max-w-"],
+        &[class*="sm:max-w"],
+        &[class*="md:max-w"],
+        &[class*="lg:max-w"],
+        &[class*="xl:max-w"] {
+            max-width: none !important;
+        }
+    }
+}

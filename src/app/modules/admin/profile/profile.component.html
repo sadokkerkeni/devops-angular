@@ -1,0 +1,151 @@
+<!-- Modern Profile UI - Complete Redesign -->
+<div class="flex flex-col flex-auto min-w-0 bg-gray-50">
+    <!-- Modern Page Header -->
+    <div class="modern-page-header">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+                <h1 class="header-title">Mon Profil</h1>
+                <p class="header-subtitle">Consultez et modifiez vos informations personnelles</p>
+            </div>
+            <div *ngIf="!isEditing">
+                <button
+                    mat-raised-button
+                    color="primary"
+                    (click)="toggleEdit()"
+                    class="modern-btn btn-primary">
+                    <mat-icon [svgIcon]="'heroicons_outline:pencil'"></mat-icon>
+                    <span>Modifier</span>
+                </button>
+            </div>
+            <div *ngIf="isEditing" class="flex gap-2">
+                <button
+                    mat-raised-button
+                    color="primary"
+                    [disabled]="saving || !profileForm.valid"
+                    (click)="saveProfile()"
+                    class="modern-btn btn-primary">
+                    <mat-icon *ngIf="!saving" [svgIcon]="'heroicons_outline:check'"></mat-icon>
+                    <mat-icon *ngIf="saving" [svgIcon]="'heroicons_outline:arrow-path'" class="animate-spin"></mat-icon>
+                    <span>{{ saving ? 'Enregistrement...' : 'Enregistrer' }}</span>
+                </button>
+                <button
+                    mat-button
+                    [disabled]="saving"
+                    (click)="toggleEdit()"
+                    class="modern-btn btn-secondary">
+                    <mat-icon [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+                    <span>Annuler</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div *ngIf="loading" class="modern-loading">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Chargement du profil...</p>
+    </div>
+
+    <!-- Profile Content -->
+    <div *ngIf="!loading && user" class="flex flex-col gap-6 p-6 md:p-8">
+        <!-- User Info Card -->
+        <div class="modern-card animate-fade-in-up">
+            <div class="card-header">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white text-xl font-semibold">
+                        {{ user.firstName?.charAt(0)?.toUpperCase() || 'U' }}{{ user.lastName?.charAt(0)?.toUpperCase() || '' }}
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">Informations Personnelles</h2>
+                        <p class="text-sm text-gray-500">Vos données de profil</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="profileForm" class="flex flex-col gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- First Name -->
+                        <div class="modern-form-field">
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>Prénom</mat-label>
+                                <input matInput formControlName="firstName" [disabled]="!isEditing" class="enhanced-focus">
+                                <mat-icon matPrefix [svgIcon]="'heroicons_outline:user'"></mat-icon>
+                                <mat-error *ngIf="profileForm.get('firstName')?.hasError('required')">
+                                    Le prénom est requis
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="modern-form-field">
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>Nom</mat-label>
+                                <input matInput formControlName="lastName" [disabled]="!isEditing" class="enhanced-focus">
+                                <mat-icon matPrefix [svgIcon]="'heroicons_outline:user'"></mat-icon>
+                                <mat-error *ngIf="profileForm.get('lastName')?.hasError('required')">
+                                    Le nom est requis
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Matricule -->
+                        <div class="modern-form-field">
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>Matricule</mat-label>
+                                <input matInput formControlName="matricule" [disabled]="!isEditing" class="enhanced-focus">
+                                <mat-icon matPrefix [svgIcon]="'heroicons_outline:identification'"></mat-icon>
+                                <mat-error *ngIf="profileForm.get('matricule')?.hasError('required')">
+                                    Le matricule est requis
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="modern-form-field">
+                            <mat-form-field appearance="outline" class="w-full">
+                                <mat-label>Email</mat-label>
+                                <input matInput type="email" formControlName="email" [disabled]="!isEditing" class="enhanced-focus">
+                                <mat-icon matPrefix [svgIcon]="'heroicons_outline:envelope'"></mat-icon>
+                                <mat-error *ngIf="profileForm.get('email')?.hasError('required')">
+                                    L'email est requis
+                                </mat-error>
+                                <mat-error *ngIf="profileForm.get('email')?.hasError('email')">
+                                    Email invalide
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Roles Card -->
+        <div class="modern-card animate-fade-in-up" [style.animation-delay]="'0.1s'">
+            <div class="card-header">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <mat-icon [svgIcon]="'heroicons_outline:shield-check'" class="text-white"></mat-icon>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">Rôles</h2>
+                        <p class="text-sm text-gray-500">Vos permissions dans l'application</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div *ngIf="user.roles && user.roles.length > 0" class="flex flex-wrap gap-2">
+                    <span 
+                        *ngFor="let role of user.roles" 
+                        class="status-badge badge-info">
+                        {{ role }}
+                    </span>
+                </div>
+                <div *ngIf="!user.roles || user.roles.length === 0" class="text-gray-500 text-sm">
+                    Aucun rôle assigné
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
