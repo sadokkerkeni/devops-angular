@@ -1,0 +1,223 @@
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProje.27AC7FC9.Up2Date
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+C:/Users/Sadok/OneDrive/Bureau/Pfe/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProje.27AC7FC9.Up2Date
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+C:/Users/GX15/Downloads/PfeWebApplication.net/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.sourcelink.json
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CopyComplete
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.sourcelink.json
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProje.27AC7FC9.Up2Date
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+C:/devops/DEVOPSS-ANGULAR-sadokback/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProje.27AC7FC9.Up2Date
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+C:/Users/Sadok/Downloads/Finale Destination/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/New folder (2)/latex_project_eng/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProje.27AC7FC9.Up2Date
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CopyComplete
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+/mnt/c/work/sadok/New folder (6)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProje.27AC7FC9.Up2Date
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+/mnt/c/Users/ykbeili/Downloads/PFE-Sadok/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CopyComplete
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+/mnt/c/Users/GHAITH/OneDrive/Bureau/WORKDHIA/SADOK/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProje.27AC7FC9.Up2Date
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProje.27AC7FC9.Up2Date
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+/mnt/c/Users/ykbeili/OneDrive - Vermeg/Desktop/last sadouk/PFE-Sadok/New folder/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CopyComplete
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+/mnt/c/Users/Sadok/Downloads/pfe-sadok-main (3)/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.deps.json
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.runtimeconfig.json
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.dll
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/bin/Debug/net8.0/PfeProject.Domain.pdb
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.AssemblyReference.cache
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfoInputs.cache
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.AssemblyInfo.cs
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CoreCompileInputs.cache
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.csproj.CopyComplete
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.dll
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/refint/PfeProject.Infrastructure.dll
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.pdb
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/PfeProject.Infrastructure.genruntimeconfig.cache
+/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/Debug/net8.0/ref/PfeProject.Infrastructure.dll

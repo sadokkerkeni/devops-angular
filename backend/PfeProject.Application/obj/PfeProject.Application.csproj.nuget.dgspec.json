@@ -1,0 +1,248 @@
+{
+  "format": 1,
+  "restore": {
+    "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Application/PfeProject.Application.csproj": {}
+  },
+  "projects": {
+    "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Application/PfeProject.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Application/PfeProject.Application.csproj",
+        "projectName": "PfeProject.Application",
+        "projectPath": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Application/PfeProject.Application.csproj",
+        "packagesPath": "/home/sadok/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/sadok/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Domain/PfeProject.Domain.csproj": {
+                "projectPath": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Domain/PfeProject.Domain.csproj"
+              },
+              "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/PfeProject.Infrastructure.csproj": {
+                "projectPath": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/PfeProject.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "prometheus-net": {
+              "target": "Package",
+              "version": "[8.2.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Domain/PfeProject.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Domain/PfeProject.Domain.csproj",
+        "projectName": "PfeProject.Domain",
+        "projectPath": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Domain/PfeProject.Domain.csproj",
+        "packagesPath": "/home/sadok/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/sadok/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/PfeProject.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/PfeProject.Infrastructure.csproj",
+        "projectName": "PfeProject.Infrastructure",
+        "projectPath": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/PfeProject.Infrastructure.csproj",
+        "packagesPath": "/home/sadok/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/sadok/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Domain/PfeProject.Domain.csproj": {
+                "projectPath": "/mnt/c/Users/Sadok/OneDrive/Bureau/pfe-sadok-main PFE Final/pfe-sadok-main/PfeWebApplication/backend/PfeProject.Domain/PfeProject.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

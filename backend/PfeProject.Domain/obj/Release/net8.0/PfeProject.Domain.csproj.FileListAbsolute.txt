@@ -1,0 +1,12 @@
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/bin/Release/net8.0/PfeProject.Domain.deps.json
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/bin/Release/net8.0/PfeProject.Domain.dll
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/bin/Release/net8.0/PfeProject.Domain.pdb
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/obj/Release/net8.0/PfeProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/obj/Release/net8.0/PfeProject.Domain.AssemblyInfoInputs.cache
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/obj/Release/net8.0/PfeProject.Domain.AssemblyInfo.cs
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/obj/Release/net8.0/PfeProject.Domain.csproj.CoreCompileInputs.cache
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/obj/Release/net8.0/PfeProject.Domain.sourcelink.json
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/obj/Release/net8.0/PfeProject.Domain.dll
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/obj/Release/net8.0/refint/PfeProject.Domain.dll
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/obj/Release/net8.0/PfeProject.Domain.pdb
+/mnt/c/work/sadok/pfe-sadok/PfeWebApplication/backend/PfeProject.Domain/obj/Release/net8.0/ref/PfeProject.Domain.dll
