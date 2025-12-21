@@ -3,10 +3,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy project files
-COPY ["PfeProject.API/PfeProject.API.csproj", "PfeProject.API/"]
-COPY ["PfeProject.Application/PfeProject.Application.csproj", "PfeProject.Application/"]
-COPY ["PfeProject.Domain/PfeProject.Domain.csproj", "PfeProject.Domain/"]
-COPY ["PfeProject.Infrastructure/PfeProject.Infrastructure.csproj", "PfeProject.Infrastructure/"]
+COPY ["backend/PfeProject.API/PfeProject.API.csproj", "PfeProject.API/"]
+COPY ["backend/PfeProject.Application/PfeProject.Application.csproj", "PfeProject.Application/"]
+COPY ["backend/PfeProject.Domain/PfeProject.Domain.csproj", "PfeProject.Domain/"]
+COPY ["backend/PfeProject.Infrastructure/PfeProject.Infrastructure.csproj", "PfeProject.Infrastructure/"]
 
 # Restore dependencies
 RUN dotnet restore "PfeProject.API/PfeProject.API.csproj"
