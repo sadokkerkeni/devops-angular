@@ -12,7 +12,7 @@ COPY ["backend/PfeProject.Infrastructure/PfeProject.Infrastructure.csproj", "Pfe
 RUN dotnet restore "PfeProject.API/PfeProject.API.csproj"
 
 # Copy everything else and build
-COPY . .
+COPY backend/. .
 WORKDIR "/src/PfeProject.API"
 RUN dotnet build "PfeProject.API.csproj" -c Release -o /app/build
 
